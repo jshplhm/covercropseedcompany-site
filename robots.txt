@@ -1,0 +1,92 @@
+# ─────────────────────────────────────────────────────────────────
+#  robots.txt — covercropseedcompany.com
+#  Strategy: allow all indexing + AI retrieval bots
+#            allow training bots (small site, citation benefit > risk)
+#            block Common Crawl (broad training corpus with no citation upside)
+#  Last updated: 2026
+# ─────────────────────────────────────────────────────────────────
+
+# ── Standard search engines ───────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ── Google AI (Gemini training + AI Overviews) ────────────────────
+# Google-Extended controls Gemini training separately from search.
+# Allowing it helps you appear in Gemini answers.
+User-agent: Google-Extended
+Allow: /
+
+# ── OpenAI ────────────────────────────────────────────────────────
+# GPTBot   = ChatGPT training corpus
+# OAI-SearchBot = live ChatGPT Search retrieval (citation traffic)
+# ChatGPT-User  = user-triggered fetches in ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# ── Anthropic / Claude ────────────────────────────────────────────
+# ClaudeBot     = training crawler
+# Claude-Web    = live retrieval — drives citation traffic from Claude.ai
+# anthropic-ai  = public search crawler
+# Claude-User   = user-triggered fetches
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# ── Perplexity ────────────────────────────────────────────────────
+User-agent: PerplexityBot
+Allow: /
+
+# ── Apple Intelligence ────────────────────────────────────────────
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ── Meta AI (training scraper — block) ───────────────────────────
+# Meta-ExternalAgent feeds Llama training; no citation upside for small local sites.
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+# ── Common Crawl (block) ──────────────────────────────────────────
+# CCBot feeds a broad training corpus. Blocking doesn't affect search
+# rankings or AI citations — only broad open-source training pipelines.
+User-agent: CCBot
+Disallow: /
+
+# ── Bytespider / ByteDance (block) ───────────────────────────────
+User-agent: Bytespider
+Disallow: /
+
+# ── Catch-all ────────────────────────────────────────────────────
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.covercropseedcompany.com/sitemap.xml
