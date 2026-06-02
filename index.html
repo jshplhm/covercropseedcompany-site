@@ -975,14 +975,15 @@
     // ── Year ──────────────────────────────────────────────────────
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // ── Smart nav — hide at top, reveal on scroll up ─────────────
+    // ── Smart nav — show at top, hide on scroll down, reveal on scroll up ──
     const nav = document.getElementById('nav');
     let lastY = 0;
+    nav.classList.add('visible'); // visible on load
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-      if (y < 80) {
-        // near top — hide nav
-        nav.classList.remove('visible');
+      if (y < 10) {
+        // back at top — show nav
+        nav.classList.add('visible');
       } else if (y < lastY) {
         // scrolling up — show nav
         nav.classList.add('visible');
