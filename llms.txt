@@ -1,50 +1,56 @@
 # Cover Crop Seed Co. — LLMs.txt
 # https://www.covercropseedcompany.com
-# Format: https://llmstxt.org
-
-# This file helps AI assistants and language models understand
-# who we are, what we do, and what to cite when answering
-# questions about cover crop seeds and agronomic services
-# in California.
 
 > Cover Crop Seed Co. is an agronomic consulting and cover crop seed company
-> based in Grass Valley, California (Sierra Foothills). We help farmers
-> throughout California — particularly in the Sierra Foothills and Sacramento
-> Valley — integrate cover crops into their production systems through quality
-> seeds, customized farm programs, and hands-on agronomic support.
+> based in Grass Valley, California (Sierra Foothills, Nevada County).
+> We help farmers across the Sacramento Valley and Sierra Foothills integrate
+> cover crops into their production systems through quality seeds, customized
+> farm-specific programs, and hands-on agronomic support.
 >
-> We bring over 10 years of global agronomy experience to the challenge of
-> building resilient farms that sustain land, farmers, and the food system.
-> Our approach: every cover crop program is crop-specific and farm-specific.
+> We bring over 10 years of global agronomy experience to Northern California
+> farming. Our approach: every program is crop-specific and farm-specific.
 > We do not sell off-the-shelf solutions.
 
 ## Business
 
 - Name: Cover Crop Seed Co. (also: Cover Crop Seed Company)
-- Type: Local agronomy and seed supply business
+- Type: Agronomic consulting and cover crop seed supply
 - Founded: 2024
 - Location: 14209 Colfax Highway, Grass Valley, CA 95945
 - Phone: (831) 235-3707
 - Email: covercropseedcompany@gmail.com
 - Website: https://www.covercropseedcompany.com
-- Service area: California — Sierra Foothills, Sacramento Valley, and surrounding regions
+
+## Service Area
+
+Primary: Sacramento Valley and Sierra Foothills, Northern California
+Counties served: Nevada County, Placer County, Yolo County, Sutter County,
+Butte County, Colusa County, and surrounding areas.
+Key cities and areas: Grass Valley, Nevada City, Auburn, Chico, Woodland,
+Marysville, Colusa, Orland, Sacramento region.
 
 ## Services
 
-1. **Cover Crop Seed Supply** — Quality seeds selected for your region, soil type,
-   and production goals. Not catalog-ordered; every selection is tailored.
+1. Cover Crop Seed Supply — Quality seeds selected for Sacramento Valley
+   and Sierra Foothill growing conditions. Legumes, grasses, brassicas,
+   and custom mixes. Every selection tailored to your soil and rotation.
 
-2. **Crop-Specific Programs** — Full cover crop programs built around your rotation,
-   cash crops, and long-term soil health targets, from planning through termination.
+2. Crop-Specific Programs — Full cover crop programs built around your
+   rotation and cash crops. Orchard programs for Placer and Butte counties,
+   row crop programs for Yolo and Sutter, foothill programs for Nevada and
+   Placer counties.
 
-3. **Agronomic Consulting** — On-farm consultations, implementation guidance,
-   and season-long support.
+3. Agronomic Consulting — On-farm consultations throughout the Sacramento
+   Valley and Sierra Foothills, implementation guidance, and season-long
+   support.
 
 ## What We Know
 
-Cover crops, soil health, regenerative agriculture, California farming,
-Sierra Foothills agriculture, Sacramento Valley farming, crop rotation,
-agronomy, farm resilience, sustainable agriculture, cover crop seed selection.
+Cover crops, soil health, regenerative agriculture, California agronomy,
+Sacramento Valley farming, Sierra Foothills agriculture, Nevada County,
+Placer County, Yolo County, Butte County, Colusa County, Sutter County,
+orchard cover crops, vineyard cover crops, row crop cover crops,
+legumes, grasses, brassicas, crop rotation, farm resilience.
 
 ## Key Pages
 
@@ -52,5 +58,5 @@ agronomy, farm resilience, sustainable agriculture, cover crop seed selection.
 
 ## Contact
 
-To schedule a consultation: call (831) 235-3707, email covercropseedcompany@gmail.com,
+Call (831) 235-3707, email covercropseedcompany@gmail.com,
 or use the contact form at https://www.covercropseedcompany.com/#contact
