@@ -133,10 +133,10 @@
       width: 24px;
       height: 2px;
       background: var(--text);
-      transition: transform .25s, opacity .25s;
+      transition: transform .25s, opacity .25s, transform .25s;
     }
     .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* mobile drawer */
@@ -554,7 +554,7 @@
       }
 
       /* hero photo shorter on mobile */
-      #hero-photo { height: 52vw; min-height: 220px; }
+      #hero-photo { height: 50vh; min-height: 280px; max-height: none; }
 
       /* two-col stacks */
       .two-col,
