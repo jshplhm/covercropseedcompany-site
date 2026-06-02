@@ -3,11 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cover Crop Seed Co.</title>
-  <meta name="description" content="Quality seeds, crop-specific programs and agronomic support to integrate cover cropping into your production system. Based in Grass Valley, CA." />
-  <meta property="og:title" content="Cover Crop Seed Co." />
+  <title>Cover Crop Seed Co. | Cover Crop Seeds &amp; Agronomic Consulting | Grass Valley, CA</title>
+  <meta name="description" content="Cover Crop Seed Co. provides quality cover crop seeds, farm-specific programs, and hands-on agronomic consulting to California farmers. Located in Grass Valley, CA, serving the Sierra Foothills, Sacramento Valley, and beyond." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cover Crop Seed Co. | Cover Crop Seeds &amp; Agronomic Consulting" />
+  <meta property="og:description" content="Quality cover crop seeds, farm-specific programs, and agronomic consulting for California farmers. Based in Grass Valley, CA." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.covercropseedcompany.com" />
+  <meta property="og:image" content="https://www.covercropseedcompany.com/images/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Cover Crop Seed Co." />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cover Crop Seed Co. | Cover Crop Seeds &amp; Agronomic Consulting" />
+  <meta name="twitter:description" content="Quality cover crop seeds, farm-specific programs, and agronomic consulting for California farmers. Based in Grass Valley, CA." />
+  <meta name="twitter:image" content="https://www.covercropseedcompany.com/images/og-cover.jpg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.covercropseedcompany.com/" />
+
+  <!-- Geo tags for local search -->
+  <meta name="geo.region" content="US-CA" />
+  <meta name="geo.placename" content="Grass Valley, California" />
+  <meta name="geo.position" content="39.2196;-121.0606" />
+  <meta name="ICBM" content="39.2196, -121.0606" />
 
   <!--
     Fonts:
@@ -27,8 +49,8 @@
       --rule:       #e0ddd8;
       --text:       #1a1a18;
       --muted:      #6b6b65;
-      --green:      #3d6b45;   /* CTA / accent */
-      --green-hover:#2e5235;
+      --green:      #4a8a54;   /* CTA / accent — lighter for hero contrast */
+      --green-hover:#3a6e42;
       --green-pale: #edf3ee;   /* card bg tint */
 
       --font-display: 'DM Sans', sans-serif;
@@ -46,8 +68,8 @@
       font-family: var(--font-body);
       background: var(--white);
       color: var(--text);
-      font-size: 16px;
-      line-height: 1.75;
+      font-size: 17px;
+      line-height: 1.8;
       -webkit-font-smoothing: antialiased;
     }
     img { display: block; max-width: 100%; }
@@ -79,7 +101,7 @@
     .nav-logo {
       font-family: var(--font-display);
       font-size: 1rem;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: .05em;
       text-transform: uppercase;
       color: var(--text);
@@ -180,8 +202,8 @@
     .hero-headline {
       font-family: var(--font-display);
       font-size: clamp(2rem, 4.5vw, 3.4rem);
-      font-weight: 800;
-      line-height: 1.1;
+      font-weight: 700;
+      line-height: 1.12;
       color: var(--white);
       max-width: 620px;
       margin-bottom: 22px;
@@ -265,14 +287,14 @@
     }
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(1.6rem, 2.8vw, 2.3rem);
-      font-weight: 800;
+      font-size: clamp(1.75rem, 2.8vw, 2.4rem);
+      font-weight: 700;
       line-height: 1.15;
       color: var(--text);
       margin-bottom: 22px;
     }
     .body-text {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 400;
       color: var(--muted);
       line-height: 1.85;
@@ -306,8 +328,8 @@
 
     .svc-num {
       font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 800;
+      font-size: 2.2rem;
+      font-weight: 700;
       color: var(--rule);
       line-height: 1;
       margin-bottom: 18px;
@@ -318,7 +340,7 @@
     .svc-title {
       font-family: var(--font-display);
       font-size: 1.1rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--text);
       margin-bottom: 12px;
     }
@@ -365,8 +387,8 @@
     }
     .contact-title {
       font-family: var(--font-display);
-      font-size: clamp(1.6rem, 2.8vw, 2.3rem);
-      font-weight: 800;
+      font-size: clamp(1.75rem, 2.8vw, 2.4rem);
+      font-weight: 700;
       line-height: 1.15;
       margin-bottom: 20px;
     }
@@ -487,6 +509,195 @@
       .nav-inner { padding: 0 20px; }
     }
   </style>
+
+  <!-- ═══════════════════════════════════════════════════
+       Structured Data — JSON-LD
+       Targets: Google Search, Maps, AI Overviews,
+                ChatGPT Search, Gemini, Perplexity, Claude
+       ═══════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.covercropseedcompany.com/#business",
+        "name": "Cover Crop Seed Co.",
+        "legalName": "Cover Crop Seed Company",
+        "description": "Cover Crop Seed Co. provides quality cover crop seeds, crop-specific agronomic programs, and on-farm consulting to help California farmers build soil health and long-term resilience. Serving the Sierra Foothills, Sacramento Valley, and surrounding regions from Grass Valley, CA.",
+        "url": "https://www.covercropseedcompany.com",
+        "telephone": "+18312353707",
+        "email": "covercropseedcompany@gmail.com",
+        "foundingDate": "2024",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "14209 Colfax Highway",
+          "addressLocality": "Grass Valley",
+          "addressRegion": "CA",
+          "postalCode": "95945",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 39.2196,
+          "longitude": -121.0606
+        },
+        "areaServed": [
+          {
+            "@type": "State",
+            "name": "California"
+          },
+          {
+            "@type": "City",
+            "name": "Grass Valley"
+          },
+          {
+            "@type": "City",
+            "name": "Nevada City"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Sierra Foothills"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Sacramento Valley"
+          }
+        ],
+        "serviceType": [
+          "Cover Crop Seeds",
+          "Agronomic Consulting",
+          "Crop-Specific Cover Crop Programs",
+          "Soil Health Consulting",
+          "Farm Resilience Planning"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Cover Crop Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Quality Cover Crop Seed Supply",
+                "description": "We source and supply high-quality cover crop seed varieties suited to your region, soil type, and production goals. Every seed selection is tailored to the individual farm."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Crop-Specific Cover Crop Programs",
+                "description": "Farm-specific cover crop programs designed around your crop rotation, cash crops, and long-term soil health targets, from planning through termination."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Agronomic Consulting",
+                "description": "On-farm consultations, implementation guidance, and season-long agronomic support to integrate cover cropping into your production system."
+              }
+            }
+          ]
+        },
+        "knowsAbout": [
+          "Cover crops",
+          "Soil health",
+          "Regenerative agriculture",
+          "Agronomy",
+          "Crop rotation",
+          "California farming",
+          "Sierra Foothills agriculture",
+          "Sacramento Valley farming",
+          "Cover crop seed selection",
+          "Farm resilience"
+        ],
+        "slogan": "Cultivating resiliency on the farm, for the farm.",
+        "image": "https://www.covercropseedcompany.com/images/og-cover.jpg",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.covercropseedcompany.com/images/logo.png"
+        },
+        "sameAs": [
+          "https://www.covercropseedcompany.com"
+        ]
+      },
+
+      {
+        "@type": "WebSite",
+        "@id": "https://www.covercropseedcompany.com/#website",
+        "url": "https://www.covercropseedcompany.com",
+        "name": "Cover Crop Seed Co.",
+        "description": "Quality cover crop seeds and agronomic consulting for California farmers.",
+        "publisher": {
+          "@id": "https://www.covercropseedcompany.com/#business"
+        },
+        "inLanguage": "en-US"
+      },
+
+      {
+        "@type": "WebPage",
+        "@id": "https://www.covercropseedcompany.com/#webpage",
+        "url": "https://www.covercropseedcompany.com",
+        "name": "Cover Crop Seed Co. | Cover Crop Seeds & Agronomic Consulting | Grass Valley, CA",
+        "description": "Cover Crop Seed Co. provides quality cover crop seeds, farm-specific programs, and hands-on agronomic consulting to California farmers. Located in Grass Valley, CA.",
+        "isPartOf": { "@id": "https://www.covercropseedcompany.com/#website" },
+        "about": { "@id": "https://www.covercropseedcompany.com/#business" },
+        "inLanguage": "en-US"
+      },
+
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Cover Crop Seed Co.?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cover Crop Seed Co. is an agronomic consulting and seed supply company based in Grass Valley, California. We help farmers integrate cover crops into their production systems through quality seeds, customized crop-specific programs, and on-farm support."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What cover crop services does Cover Crop Seed Co. offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We offer three core services: (1) Quality cover crop seed supply tailored to your region and soil type, (2) Crop-specific cover crop programs designed around your rotation and goals, and (3) Agronomic consulting including on-farm consultations and season-long support."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is Cover Crop Seed Co. located and what areas do they serve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We are located at 14209 Colfax Highway, Grass Valley, CA 95945. We serve farmers throughout California, with a focus on the Sierra Foothills, Sacramento Valley, and surrounding regions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I get started with a cover crop program?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The best first step is to schedule a consultation. You can reach us at (831) 235-3707 or covercropseedcompany@gmail.com, or fill out the contact form at covercropseedcompany.com. We'll discuss your farm, your goals, and how cover crops can fit your production system."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why use cover crops on my farm?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cover crops improve soil health, reduce erosion, suppress weeds, fix nitrogen, and build long-term farm resilience. They are a proven tool for sustainable and regenerative agriculture. Cover cropping is a farm-specific practice and works best when tailored to your soil, climate, and cash crop rotation."
+            }
+          }
+        ]
+      }
+
+    ]
+  }
+  </script>
+
 </head>
 <body>
 
@@ -523,7 +734,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow">Grass Valley, California</p>
       <h1 class="hero-headline">Resilient Agriculture Through Cover Crops</h1>
-      <p class="hero-sub">Quality seeds, crop-specific programs, and agronomic support to integrate cover cropping into your production system.</p>
+      <p class="hero-sub">We provide quality seeds, crop specific programs and agronomic support to integrate cover cropping into your production system. We strive to cultivate resiliency on the farm, for the farm, with a commitment to those who grow our food.</p>
       <div class="hero-btns">
         <a href="#contact" class="btn btn-solid">Request a Consultation</a>
         <a href="#about"   class="btn btn-outline-white">Learn More</a>
@@ -535,7 +746,7 @@
   <div id="intro-band">
     <div class="wrap">
       <p class="intro-band-text">
-        "We strive to cultivate resiliency on the farm, for the farm — with a commitment to those who grow our food."
+        "We strive to cultivate resiliency on the farm, for the farm, with a commitment to those who grow our food."
       </p>
     </div>
   </div>
@@ -560,7 +771,7 @@
         <div class="col-text fade-up" style="transition-delay:.15s">
           <p class="eyebrow">Our Story</p>
           <h2 class="section-title">Making a positive impact in our industry is possible. We've done it before.</h2>
-          <p class="body-text">Our leadership team brings over 10 years of global agronomy experience to take on the greatest challenge of our time — growing in a way that sustains our land, our farmers, and our food system.</p>
+          <p class="body-text">Our leadership team brings over 10 years of global agronomy experience to take on the greatest challenge of our time, growing in a way that sustains our land, our farmers, and our food system.</p>
           <p class="body-text">Based in Grass Valley, CA, we work directly with farmers to design cover crop programs that improve soil health, reduce inputs, and build long-term resilience into every operation we touch.</p>
           <div class="ruled-gap"></div>
           <a href="#contact" class="btn btn-outline-dark" style="margin-top:6px">Get in Touch</a>
@@ -574,23 +785,23 @@
     <div class="wrap">
       <div class="services-hd fade-up">
         <p class="eyebrow">What We Offer</p>
-        <h2 class="section-title">A complete cover crop program — seed to field</h2>
+        <h2 class="section-title">A complete cover crop program, from seed to field</h2>
       </div>
       <div class="services-grid">
         <div class="service-card fade-up">
           <div class="svc-num">01</div>
           <h3 class="svc-title">Quality Seed Supply</h3>
-          <p class="svc-body">We source high-quality cover crop seed varieties suited to your region, soil type, and production goals. Every selection is tailored — not catalog-ordered.</p>
+          <p class="svc-body">We source high-quality cover crop seed varieties suited to your region, soil type, and production goals. Every selection is tailored to your farm, not catalog-ordered.</p>
         </div>
         <div class="service-card fade-up" style="transition-delay:.1s">
           <div class="svc-num">02</div>
           <h3 class="svc-title">Crop-Specific Programs</h3>
-          <p class="svc-body">Cover cropping is farm-specific. We build programs around your rotation, cash crops, and long-term soil health targets — from planning through termination.</p>
+          <p class="svc-body">Cover cropping is farm-specific. We build programs around your rotation, cash crops, and long-term soil health targets, from planning through termination.</p>
         </div>
         <div class="service-card fade-up" style="transition-delay:.2s">
           <div class="svc-num">03</div>
           <h3 class="svc-title">Agronomic Consulting</h3>
-          <p class="svc-body">On-farm consultations, implementation guidance, and season-long support to help you get it right the first time — and every season after.</p>
+          <p class="svc-body">On-farm consultations, implementation guidance, and season-long support to help you get it right the first time, and every season after.</p>
         </div>
       </div>
     </div>
@@ -603,8 +814,8 @@
         <div class="col-text mgmt-text fade-up">
           <p class="eyebrow">Cover Crop Management</p>
           <h2 class="section-title">Every farm is different. Your program should be too.</h2>
-          <p class="body-text">Cover cropping is an agronomic practice shaped by your soil, climate, cash crop, and goals — not a product you plug in. Whether you're just getting started or looking to refine an existing program, we bring the science and field experience.</p>
-          <p class="body-text" style="margin-top:14px">Please reach out for a consultation to learn how cover crops can become a productive and resilient part of your operation.</p>
+          <p class="body-text">Cover cropping is a crop specific, farm specific process shaped by your soil, climate, cash crop, and goals. Whether you're just getting started or looking to refine an existing program, we bring the science and field experience.</p>
+          <p class="body-text" style="margin-top:14px">Please reach out for a consultation to learn more about how cover crops can be part of your production system.</p>
           <div class="ruled-gap"></div>
           <a href="#contact" class="btn btn-solid">Schedule a Consultation</a>
         </div>
@@ -634,7 +845,7 @@
         <div class="fade-up">
           <p class="eyebrow">Get In Touch</p>
           <h2 class="contact-title">Ready to talk cover crops?</h2>
-          <p class="contact-body">Whether you're a small family operation or a large commercial farm, we'd love to hear about your goals and explore how cover crops can fit your system.</p>
+          <p class="contact-body">Whether you're a small family operation or a large commercial farm, we'd love to hear about your goals and how cover crops can fit your system.</p>
           <ul class="contact-list">
             <li>
               <span class="lbl">Address</span>
@@ -708,7 +919,6 @@
   <footer>
     <p>
       © <span id="yr"></span> Cover Crop Seed Co.&ensp;·&ensp;Grass Valley, CA
-      &ensp;·&ensp;<a href="mailto:covercropseedcompany@gmail.com">covercropseedcompany@gmail.com</a>
     </p>
   </footer>
 
