@@ -978,18 +978,25 @@
     // ── Smart nav — show at top, hide on scroll down, reveal on scroll up ──
     const nav = document.getElementById('nav');
     let lastY = 0;
-    nav.classList.add('visible'); // visible on load
+    let scrollUpDelta = 0;
+    const REVEAL_THRESHOLD = 10; // px of upward scroll needed to reveal
+    nav.classList.add('visible');
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
       if (y < 10) {
-        // back at top — show nav
+        // at top — always show
         nav.classList.add('visible');
+        scrollUpDelta = 0;
       } else if (y < lastY) {
-        // scrolling up — show nav
-        nav.classList.add('visible');
+        // scrolling up — accumulate delta
+        scrollUpDelta += lastY - y;
+        if (scrollUpDelta >= REVEAL_THRESHOLD) {
+          nav.classList.add('visible');
+        }
       } else {
-        // scrolling down — hide nav
+        // scrolling down — hide and reset delta
         nav.classList.remove('visible');
+        scrollUpDelta = 0;
       }
       lastY = y;
     }, { passive: true });
