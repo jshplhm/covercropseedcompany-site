@@ -4,546 +4,494 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cover Crop Seed Co.</title>
-  <meta name="description" content="Quality seeds, crop-specific programs and agronomic support to integrate cover cropping into your production system." />
+  <meta name="description" content="Quality seeds, crop-specific programs and agronomic support to integrate cover cropping into your production system. Based in Grass Valley, CA." />
   <meta property="og:title" content="Cover Crop Seed Co." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.covercropseedcompany.com" />
 
-  <!-- Fonts: Playfair Display (display) + Source Serif 4 (body) — earthy, editorial, matches Squarespace feel -->
+  <!--
+    Fonts:
+    - Cormorant Garamond → display/headlines (elegant, editorial, serif — matches Squarespace vibe)
+    - Jost              → body/nav (clean, geometric, light weight)
+  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
 
   <style>
-    /* ─── Design Tokens ─────────────────────────────────────────── */
+    /* ── Tokens ─────────────────────────────────────────────────── */
     :root {
-      --soil:      #2c2418;   /* deep warm brown — primary text */
-      --earth:     #6b5c41;   /* mid brown — secondary text */
-      --clay:      #a08c6e;   /* muted tan — accents */
-      --straw:     #e8dfc8;   /* warm off-white — backgrounds */
-      --cream:     #f5f1e8;   /* near-white */
-      --sage:      #5a7a52;   /* muted green — CTA / links */
-      --sage-dark: #3f5a39;
-      --white:     #ffffff;
+      --white:      #ffffff;
+      --off-white:  #f9f9f7;
+      --light-grey: #f2f1ee;
+      --rule:       #e0ddd8;
+      --text:       #1a1a18;
+      --muted:      #6b6b65;
+      --green:      #3d6b45;   /* CTA / accent */
+      --green-hover:#2e5235;
+      --green-pale: #edf3ee;   /* card bg tint */
 
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body:    'Source Serif 4', Georgia, serif;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', sans-serif;
 
-      --nav-h: 68px;
-      --section-gap: 110px;
-      --max-w: 1100px;
+      --nav-h: 64px;
+      --max-w: 1080px;
+      --gap:   96px;
     }
 
-    /* ─── Reset & Base ──────────────────────────────────────────── */
+    /* ── Reset ──────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: var(--font-body);
-      background: var(--cream);
-      color: var(--soil);
-      font-size: 18px;
+      background: var(--white);
+      color: var(--text);
+      font-size: 17px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
-
     img { display: block; max-width: 100%; }
     a   { color: inherit; text-decoration: none; }
 
-    /* ─── Nav ───────────────────────────────────────────────────── */
+    /* ── Nav ────────────────────────────────────────────────────── */
     #nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--cream);
-      border-bottom: 1px solid #d6cdb8;
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
       height: var(--nav-h);
       display: flex;
       align-items: center;
-      transition: box-shadow 0.3s;
+      transition: box-shadow .3s;
     }
-    #nav.scrolled { box-shadow: 0 2px 18px rgba(44,36,24,0.10); }
+    #nav.scrolled { box-shadow: 0 1px 20px rgba(0,0,0,.07); }
 
     .nav-inner {
       max-width: var(--max-w);
       width: 100%;
       margin: 0 auto;
-      padding: 0 32px;
+      padding: 0 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
     .nav-logo {
       font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      color: var(--soil);
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: .04em;
+      color: var(--text);
     }
-
     .nav-links {
       display: flex;
-      gap: 36px;
+      gap: 40px;
       list-style: none;
     }
-
     .nav-links a {
       font-family: var(--font-body);
-      font-size: 0.9rem;
+      font-size: .78rem;
       font-weight: 300;
-      letter-spacing: 0.07em;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--earth);
-      transition: color 0.2s;
+      color: var(--muted);
+      transition: color .2s;
     }
-    .nav-links a:hover { color: var(--sage); }
+    .nav-links a:hover { color: var(--green); }
 
-    /* ─── Hero ──────────────────────────────────────────────────── */
+    /* ── Buttons ────────────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      padding: 13px 34px;
+      font-family: var(--font-body);
+      font-size: .78rem;
+      font-weight: 300;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: background .22s, transform .15s, color .22s;
+    }
+    .btn-solid {
+      background: var(--green);
+      color: var(--white);
+    }
+    .btn-solid:hover { background: var(--green-hover); transform: translateY(-1px); }
+    .btn-outline-dark {
+      background: transparent;
+      border: 1px solid var(--text);
+      color: var(--text);
+    }
+    .btn-outline-dark:hover { background: var(--text); color: var(--white); }
+    .btn-outline-white {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.65);
+      color: var(--white);
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,.12); }
+
+    /* ── Hero ───────────────────────────────────────────────────── */
     #hero {
       position: relative;
       width: 100%;
-      min-height: 92vh;
+      min-height: 94vh;
       display: flex;
       align-items: flex-end;
       overflow: hidden;
+      background: #c8d4c0; /* fallback while image loads */
     }
-
     .hero-img {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 30%;
+      object-position: center 40%;
     }
-
-    /* dark-to-light gradient overlay so text is readable */
     .hero-overlay {
       position: absolute;
       inset: 0;
+      /* gentle bottom darkening only — keeps the bright field visible */
       background: linear-gradient(
         to top,
-        rgba(30,22,10,0.72) 0%,
-        rgba(30,22,10,0.30) 50%,
-        rgba(30,22,10,0.08) 100%
+        rgba(10,14,9,.62) 0%,
+        rgba(10,14,9,.22) 45%,
+        rgba(10,14,9,.05) 100%
       );
     }
-
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 0 40px 72px;
+      padding: 0 40px 80px;
       width: 100%;
     }
-
     .hero-eyebrow {
       font-family: var(--font-body);
-      font-size: 0.78rem;
+      font-size: .72rem;
       font-weight: 300;
-      letter-spacing: 0.2em;
+      letter-spacing: .22em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 16px;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 14px;
     }
-
     .hero-headline {
       font-family: var(--font-display);
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      font-weight: 600;
-      line-height: 1.18;
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      font-weight: 400;
+      line-height: 1.12;
       color: var(--white);
-      max-width: 640px;
-      margin-bottom: 24px;
+      max-width: 620px;
+      margin-bottom: 22px;
     }
-
     .hero-sub {
       font-family: var(--font-body);
-      font-size: 1.05rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.82);
-      max-width: 520px;
-      line-height: 1.7;
-      margin-bottom: 40px;
+      font-size: 1rem;
+      font-weight: 200;
+      color: rgba(255,255,255,.82);
+      max-width: 500px;
+      line-height: 1.75;
+      margin-bottom: 38px;
     }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 36px;
-      background: var(--sage);
-      color: var(--white);
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      transition: background 0.25s, transform 0.15s;
-    }
-    .btn:hover { background: var(--sage-dark); transform: translateY(-1px); }
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid rgba(255,255,255,0.6);
-      color: var(--white);
-    }
-    .btn-outline:hover { background: rgba(255,255,255,0.12); }
-
-    /* ─── Sections shared ───────────────────────────────────────── */
+    /* ── Section shared ─────────────────────────────────────────── */
     section { scroll-margin-top: var(--nav-h); }
-
-    .section-inner {
+    .wrap {
       max-width: var(--max-w);
       margin: 0 auto;
       padding: 0 40px;
     }
 
-    /* ─── Mission strip (thin divider row) ──────────────────────── */
-    #mission-strip {
-      background: var(--sage);
-      color: var(--white);
-      padding: 28px 0;
+    /* ── Intro band ─────────────────────────────────────────────── */
+    #intro-band {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--rule);
+      padding: 52px 0;
       text-align: center;
     }
-
-    .mission-strip-text {
+    .intro-band-text {
       font-family: var(--font-display);
       font-style: italic;
-      font-size: clamp(1rem, 2vw, 1.3rem);
-      font-weight: 400;
-      letter-spacing: 0.01em;
+      font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+      font-weight: 300;
+      color: var(--text);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.55;
     }
 
-    /* ─── About ─────────────────────────────────────────────────── */
-    #about {
-      padding: var(--section-gap) 0;
-    }
+    /* ── About ──────────────────────────────────────────────────── */
+    #about { padding: var(--gap) 0; }
 
-    .about-grid {
+    .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 72px;
+      gap: 80px;
       align-items: center;
     }
+    .two-col.reverse .col-img { order: 2; }
+    .two-col.reverse .col-text { order: 1; }
 
-    .about-img-wrap {
-      position: relative;
-    }
-    .about-img-wrap img {
+    .col-img img {
       width: 100%;
       aspect-ratio: 4/5;
       object-fit: cover;
     }
-    /* subtle decorative frame offset */
-    .about-img-wrap::before {
+    /* thin ruled border offset */
+    .col-img {
+      position: relative;
+    }
+    .col-img::after {
       content: '';
       position: absolute;
-      top: -14px;
-      left: -14px;
-      right: 14px;
-      bottom: 14px;
-      border: 1.5px solid var(--clay);
-      z-index: 0;
+      top: 12px;
+      left: 12px;
+      right: -12px;
+      bottom: -12px;
+      border: 1px solid var(--rule);
+      z-index: -1;
     }
-    .about-img-wrap img { position: relative; z-index: 1; }
 
-    .section-label {
+    .eyebrow {
       font-family: var(--font-body);
-      font-size: 0.75rem;
+      font-size: .7rem;
       font-weight: 300;
-      letter-spacing: 0.22em;
+      letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--sage);
-      margin-bottom: 16px;
+      color: var(--green);
+      margin-bottom: 14px;
     }
-
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 600;
-      line-height: 1.22;
-      color: var(--soil);
-      margin-bottom: 24px;
+      font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 22px;
     }
-
-    .section-body {
-      font-size: 1rem;
+    .body-text {
+      font-size: .96rem;
       font-weight: 300;
-      color: var(--earth);
-      line-height: 1.8;
+      color: var(--muted);
+      line-height: 1.85;
     }
-    .section-body + .section-body { margin-top: 16px; }
+    .body-text + .body-text { margin-top: 14px; }
 
-    /* ─── Services ──────────────────────────────────────────────── */
+    /* ── Services ───────────────────────────────────────────────── */
     #services {
-      padding: var(--section-gap) 0;
-      background: var(--straw);
+      padding: var(--gap) 0;
+      background: var(--off-white);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
     }
-
-    .services-header {
+    .services-hd {
       text-align: center;
-      max-width: 560px;
-      margin: 0 auto 64px;
+      max-width: 540px;
+      margin: 0 auto 60px;
     }
-
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+      gap: 2px; /* hair gap = ruled lines between cards */
+      background: var(--rule);
     }
-
     .service-card {
-      background: var(--cream);
-      padding: 40px 32px 36px;
-      border-top: 3px solid var(--sage);
-      transition: transform 0.25s, box-shadow 0.25s;
+      background: var(--white);
+      padding: 44px 36px 40px;
+      transition: background .22s;
     }
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(44,36,24,0.10);
-    }
+    .service-card:hover { background: var(--green-pale); }
 
-    .service-icon {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    .service-title {
+    .svc-num {
       font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--soil);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--rule);
+      line-height: 1;
+      margin-bottom: 18px;
+      transition: color .22s;
+    }
+    .service-card:hover .svc-num { color: var(--green); }
+
+    .svc-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--text);
       margin-bottom: 12px;
     }
-
-    .service-body {
-      font-size: 0.93rem;
+    .svc-body {
+      font-size: .9rem;
       font-weight: 300;
-      color: var(--earth);
-      line-height: 1.75;
+      color: var(--muted);
+      line-height: 1.8;
     }
 
-    /* ─── Management / Feature section ─────────────────────────── */
-    #management {
-      padding: var(--section-gap) 0;
-    }
-
-    .mgmt-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
-    }
-
-    .mgmt-text { order: 1; }
-    .mgmt-img  { order: 2; }
+    /* ── Management ─────────────────────────────────────────────── */
+    #management { padding: var(--gap) 0; }
 
     .mgmt-img img {
       width: 100%;
-      aspect-ratio: 4/3;
+      aspect-ratio: 16/10;
       object-fit: cover;
     }
-
-    .cta-row {
-      margin-top: 36px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+    .mgmt-img {
+      position: relative;
+    }
+    .mgmt-img::after {
+      content: '';
+      position: absolute;
+      top: -12px;
+      right: 12px;
+      left: -12px;
+      bottom: 12px;
+      border: 1px solid var(--rule);
+      z-index: -1;
     }
 
-    .btn-dark {
-      background: var(--soil);
-      color: var(--white);
-    }
-    .btn-dark:hover { background: var(--earth); }
-
-    /* ─── Contact ───────────────────────────────────────────────── */
+    /* ── Contact ────────────────────────────────────────────────── */
     #contact {
-      padding: var(--section-gap) 0;
-      background: var(--soil);
-      color: var(--straw);
+      padding: var(--gap) 0 calc(var(--gap) + 16px);
+      background: var(--light-grey);
+      border-top: 1px solid var(--rule);
     }
-
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
       align-items: start;
     }
-
     .contact-title {
       font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 600;
-      line-height: 1.22;
-      color: var(--cream);
-      margin-bottom: 24px;
+      font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 20px;
     }
-
     .contact-body {
-      font-size: 0.98rem;
+      font-size: .95rem;
       font-weight: 300;
-      color: var(--clay);
-      line-height: 1.8;
+      color: var(--muted);
+      line-height: 1.85;
       margin-bottom: 36px;
     }
-
-    .contact-details {
+    .contact-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      font-size: 0.93rem;
+      gap: 16px;
+      font-size: .88rem;
       font-weight: 300;
+      color: var(--muted);
     }
-
-    .contact-details li {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      color: var(--straw);
-    }
-
-    .contact-details .icon {
-      color: var(--sage);
-      font-size: 1.05rem;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
-    .contact-details a { color: var(--straw); transition: color 0.2s; }
-    .contact-details a:hover { color: var(--sage); }
-
-    /* Simple contact form */
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .form-field label {
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
+    .contact-list li { display: flex; gap: 10px; align-items: flex-start; }
+    .contact-list .lbl {
+      font-size: .68rem;
+      letter-spacing: .15em;
       text-transform: uppercase;
-      color: var(--clay);
-      font-weight: 300;
+      color: var(--green);
+      min-width: 54px;
+      padding-top: 3px;
+      font-weight: 400;
     }
+    .contact-list a { color: var(--muted); transition: color .2s; }
+    .contact-list a:hover { color: var(--green); }
 
-    .form-field input,
-    .form-field textarea,
-    .form-field select {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.15);
-      color: var(--cream);
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 300;
-      padding: 12px 16px;
-      outline: none;
-      transition: border-color 0.2s;
-      width: 100%;
-    }
-
-    .form-field input::placeholder,
-    .form-field textarea::placeholder {
-      color: rgba(255,255,255,0.25);
-    }
-
-    .form-field input:focus,
-    .form-field textarea:focus,
-    .form-field select:focus {
-      border-color: var(--sage);
-    }
-
-    .form-field textarea { resize: vertical; min-height: 120px; }
-
-    .form-field select option { background: var(--soil); }
-
-    .btn-sage { background: var(--sage); color: var(--white); }
-    .btn-sage:hover { background: var(--sage-dark); }
-
-    /* ─── Footer ────────────────────────────────────────────────── */
-    footer {
-      background: #1a1208;
-      color: var(--clay);
-      text-align: center;
-      padding: 32px 24px;
-      font-size: 0.82rem;
-      font-weight: 300;
-      letter-spacing: 0.05em;
-    }
-
-    footer a { color: var(--clay); transition: color 0.2s; }
-    footer a:hover { color: var(--straw); }
-
-    /* ─── Divider ornament ───────────────────────────────────────── */
-    .divider {
+    /* form */
+    .contact-form {
+      background: var(--white);
+      padding: 48px 44px;
+      border: 1px solid var(--rule);
       display: flex;
-      align-items: center;
-      gap: 20px;
-      margin: 48px 0 40px;
+      flex-direction: column;
+      gap: 22px;
     }
-    .divider::before, .divider::after {
-      content: '';
-      flex: 1;
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field label {
+      font-size: .68rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 300;
+    }
+    .field input,
+    .field textarea,
+    .field select {
+      font-family: var(--font-body);
+      font-size: .93rem;
+      font-weight: 300;
+      color: var(--text);
+      background: var(--white);
+      border: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 10px 0;
+      outline: none;
+      transition: border-color .2s;
+      width: 100%;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+    .field input::placeholder,
+    .field textarea::placeholder { color: #c0bdb8; }
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus { border-bottom-color: var(--green); }
+    .field textarea { resize: vertical; min-height: 110px; }
+    .field select { cursor: pointer; background-image: none; }
+
+    /* ── Hr ornament ────────────────────────────────────────────── */
+    .ruled-gap {
+      width: 48px;
       height: 1px;
-      background: var(--clay);
-      opacity: 0.35;
-    }
-    .divider span {
-      color: var(--sage);
-      font-size: 1.1rem;
+      background: var(--rule);
+      margin: 30px 0;
     }
 
-    /* ─── Scroll-in animations ──────────────────────────────────── */
+    /* ── Footer ─────────────────────────────────────────────────── */
+    footer {
+      background: var(--text);
+      color: rgba(255,255,255,.4);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: .78rem;
+      font-weight: 300;
+      letter-spacing: .06em;
+    }
+    footer a { color: rgba(255,255,255,.4); transition: color .2s; }
+    footer a:hover { color: rgba(255,255,255,.8); }
+
+    /* ── Animations ─────────────────────────────────────────────── */
     .fade-up {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease;
     }
-    .fade-up.visible {
-      opacity: 1;
-      transform: none;
-    }
+    .fade-up.visible { opacity: 1; transform: none; }
 
-    /* ─── Responsive ────────────────────────────────────────────── */
-    @media (max-width: 860px) {
-      :root { --section-gap: 72px; }
-
-      .about-grid,
-      .mgmt-grid,
-      .contact-grid  { grid-template-columns: 1fr; gap: 40px; }
-
-      .mgmt-img { order: -1; }
-
+    /* ── Responsive ─────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      :root { --gap: 70px; }
+      .two-col, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .two-col.reverse .col-img { order: -1; }
+      .col-img::after, .mgmt-img::after { display: none; }
       .services-grid { grid-template-columns: 1fr; }
-
-      .about-img-wrap::before { display: none; }
-
-      .nav-links { display: none; } /* simple mobile hide — add hamburger if desired later */
+      .contact-form { padding: 36px 28px; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
     }
-
-    @media (max-width: 520px) {
-      .hero-content { padding: 0 24px 56px; }
-      .section-inner { padding: 0 24px; }
+    @media (max-width: 540px) {
+      .hero-content, .wrap { padding-left: 22px; padding-right: 22px; }
       .nav-inner { padding: 0 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ══════════ NAV ══════════ -->
-  <nav id="nav" role="navigation" aria-label="Main">
+  <!-- ════════ NAV ════════ -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">Cover Crop Seed Co.</a>
       <ul class="nav-links" role="list">
@@ -555,17 +503,19 @@
     </div>
   </nav>
 
-  <!-- ══════════ HERO ══════════ -->
+  <!-- ════════ HERO ════════ -->
   <section id="hero" aria-label="Hero">
     <!--
-      SWAP THIS IMAGE: replace the src below with your own hero photo.
-      Ideal size: 2400×1600px, JPG, under 500KB (run through squoosh.app).
-      The Squarespace URL below still works for now as a placeholder.
+      ╔══════════════════════════════════════════════════╗
+      ║  IMAGE SWAP — replace src with your own photo    ║
+      ║  Recommended: 2400×1600px JPG, <500 KB           ║
+      ║  Run through https://squoosh.app before upload   ║
+      ╚══════════════════════════════════════════════════╝
     -->
     <img
       class="hero-img"
       src="https://images.squarespace-cdn.com/content/v1/662fe751488d864821321c5d/1714416315841-ZTL1T0WQNQDG20IQEJWR/image-asset.jpeg"
-      alt="Lush green cover crop field at sunrise"
+      alt="Vibrant green cover crop field"
       loading="eager"
       fetchpriority="high"
     />
@@ -573,125 +523,101 @@
     <div class="hero-content">
       <p class="hero-eyebrow">Grass Valley, California</p>
       <h1 class="hero-headline">Resilient Agriculture Through Cover Crops</h1>
-      <p class="hero-sub">
-        Quality seeds, crop-specific programs, and agronomic support to integrate
-        cover cropping into your production system.
-      </p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;">
-        <a href="#contact" class="btn">Request a Consultation</a>
-        <a href="#about" class="btn btn-outline">Learn More</a>
+      <p class="hero-sub">Quality seeds, crop-specific programs, and agronomic support to integrate cover cropping into your production system.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-solid">Request a Consultation</a>
+        <a href="#about"   class="btn btn-outline-white">Learn More</a>
       </div>
     </div>
   </section>
 
-  <!-- ══════════ MISSION STRIP ══════════ -->
-  <div id="mission-strip" aria-label="Mission statement">
-    <div class="section-inner">
-      <p class="mission-strip-text">
-        "Cultivating resiliency on the farm, for the farm — with a commitment to those who grow our food."
+  <!-- ════════ INTRO BAND ════════ -->
+  <div id="intro-band">
+    <div class="wrap">
+      <p class="intro-band-text">
+        "We strive to cultivate resiliency on the farm, for the farm — with a commitment to those who grow our food."
       </p>
     </div>
   </div>
 
-  <!-- ══════════ ABOUT ══════════ -->
+  <!-- ════════ ABOUT ════════ -->
   <section id="about" aria-label="About">
-    <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-img-wrap fade-up">
+    <div class="wrap">
+      <div class="two-col">
+        <div class="col-img fade-up">
           <!--
-            SWAP: replace with your preferred team or field photo.
-            Recommended: portrait-oriented (4:5 ratio), 900×1125px.
+            ╔══════════════════════════════════════════════╗
+            ║  IMAGE SWAP — portrait 4:5 ratio             ║
+            ║  Recommended: 900×1125px JPG                 ║
+            ╚══════════════════════════════════════════════╝
           -->
           <img
             src="https://images.squarespace-cdn.com/content/v1/662fe751488d864821321c5d/1714422657423-VMMM86Z1LAPRK73F9R8K/image-asset.jpeg"
-            alt="Cover crop field in early growth stage"
+            alt="Cover crop field"
             loading="lazy"
           />
         </div>
-        <div class="fade-up" style="transition-delay:0.15s">
-          <p class="section-label">Our Story</p>
+        <div class="col-text fade-up" style="transition-delay:.15s">
+          <p class="eyebrow">Our Story</p>
           <h2 class="section-title">Making a positive impact in our industry is possible. We've done it before.</h2>
-          <p class="section-body">
-            Our leadership team brings over 10 years of global agronomy experience to take on the greatest
-            challenge of our time — growing in a way that sustains our land, our farmers, and our food system.
-          </p>
-          <p class="section-body">
-            Based in Grass Valley, CA, we work directly with farmers to design cover crop programs that
-            improve soil health, reduce inputs, and build long-term resilience into every operation we touch.
-          </p>
-          <div class="divider"><span>✦</span></div>
-          <p class="section-body" style="font-style:italic;color:var(--soil);">
-            Over 10 years of global agronomy experience. One clear mission.
-          </p>
+          <p class="body-text">Our leadership team brings over 10 years of global agronomy experience to take on the greatest challenge of our time — growing in a way that sustains our land, our farmers, and our food system.</p>
+          <p class="body-text">Based in Grass Valley, CA, we work directly with farmers to design cover crop programs that improve soil health, reduce inputs, and build long-term resilience into every operation we touch.</p>
+          <div class="ruled-gap"></div>
+          <a href="#contact" class="btn btn-outline-dark" style="margin-top:6px">Get in Touch</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════ SERVICES ══════════ -->
+  <!-- ════════ SERVICES ════════ -->
   <section id="services" aria-label="Services">
-    <div class="section-inner">
-      <div class="services-header fade-up">
-        <p class="section-label">What We Do</p>
-        <h2 class="section-title">A complete cover crop program — from seed to agronomic support</h2>
+    <div class="wrap">
+      <div class="services-hd fade-up">
+        <p class="eyebrow">What We Offer</p>
+        <h2 class="section-title">A complete cover crop program — seed to field</h2>
       </div>
       <div class="services-grid">
         <div class="service-card fade-up">
-          <span class="service-icon" aria-hidden="true">🌱</span>
-          <h3 class="service-title">Quality Seed Supply</h3>
-          <p class="service-body">
-            We source and supply high-quality cover crop seed varieties suited to your region,
-            soil type, and production goals. No one-size-fits-all — every seed selection is tailored.
-          </p>
+          <div class="svc-num">01</div>
+          <h3 class="svc-title">Quality Seed Supply</h3>
+          <p class="svc-body">We source high-quality cover crop seed varieties suited to your region, soil type, and production goals. Every selection is tailored — not catalog-ordered.</p>
         </div>
-        <div class="service-card fade-up" style="transition-delay:0.1s">
-          <span class="service-icon" aria-hidden="true">📋</span>
-          <h3 class="service-title">Crop-Specific Programs</h3>
-          <p class="service-body">
-            Cover cropping is a crop-specific, farm-specific process. We build programs around your
-            rotation, cash crops, and long-term soil health targets — not a catalog order.
-          </p>
+        <div class="service-card fade-up" style="transition-delay:.1s">
+          <div class="svc-num">02</div>
+          <h3 class="svc-title">Crop-Specific Programs</h3>
+          <p class="svc-body">Cover cropping is farm-specific. We build programs around your rotation, cash crops, and long-term soil health targets — from planning through termination.</p>
         </div>
-        <div class="service-card fade-up" style="transition-delay:0.2s">
-          <span class="service-icon" aria-hidden="true">🤝</span>
-          <h3 class="service-title">Agronomic Consulting</h3>
-          <p class="service-body">
-            Our team offers on-farm consultations, implementation guidance, and season-long
-            support to help you get it right the first time — and every season after.
-          </p>
+        <div class="service-card fade-up" style="transition-delay:.2s">
+          <div class="svc-num">03</div>
+          <h3 class="svc-title">Agronomic Consulting</h3>
+          <p class="svc-body">On-farm consultations, implementation guidance, and season-long support to help you get it right the first time — and every season after.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════ MANAGEMENT ══════════ -->
+  <!-- ════════ MANAGEMENT ════════ -->
   <section id="management" aria-label="Cover crop management">
-    <div class="section-inner">
-      <div class="mgmt-grid">
-        <div class="mgmt-text fade-up">
-          <p class="section-label">Cover Crop Management</p>
-          <h2 class="section-title">Every farm is different. Your cover crop program should be too.</h2>
-          <p class="section-body">
-            Cover cropping is not a product you plug in — it's an agronomic practice shaped by your
-            soil, your climate, your cash crop, and your goals. Whether you're just getting started or
-            looking to optimize an existing program, we bring the science and the field experience.
-          </p>
-          <p class="section-body" style="margin-top:16px;">
-            Please reach out for a consultation to learn more about how cover crops can become a
-            productive part of your production system.
-          </p>
-          <div class="cta-row">
-            <a href="#contact" class="btn btn-dark">Schedule a Consultation</a>
-          </div>
+    <div class="wrap">
+      <div class="two-col reverse">
+        <div class="col-text mgmt-text fade-up">
+          <p class="eyebrow">Cover Crop Management</p>
+          <h2 class="section-title">Every farm is different. Your program should be too.</h2>
+          <p class="body-text">Cover cropping is an agronomic practice shaped by your soil, climate, cash crop, and goals — not a product you plug in. Whether you're just getting started or looking to refine an existing program, we bring the science and field experience.</p>
+          <p class="body-text" style="margin-top:14px">Please reach out for a consultation to learn how cover crops can become a productive and resilient part of your operation.</p>
+          <div class="ruled-gap"></div>
+          <a href="#contact" class="btn btn-solid">Schedule a Consultation</a>
         </div>
-        <div class="mgmt-img fade-up" style="transition-delay:0.15s">
+        <div class="col-text mgmt-img fade-up" style="transition-delay:.15s">
           <!--
-            SWAP: replace with a management / field operation photo.
-            Landscape ratio (4:3) works best here. 1200×900px recommended.
+            ╔══════════════════════════════════════════════╗
+            ║  IMAGE SWAP — landscape 16:10 ratio          ║
+            ║  Recommended: 1200×750px JPG                 ║
+            ╚══════════════════════════════════════════════╝
           -->
           <img
             src="https://images.squarespace-cdn.com/content/v1/662fe751488d864821321c5d/ec55f024-2ebd-44e9-8b2a-45f85a32cff2/Screenshot+2024-12-19+at+1.33.45%E2%80%AFPM.png"
-            alt="Cover crop management in the field"
+            alt="Cover crop management and field planning"
             loading="lazy"
           />
         </div>
@@ -699,33 +625,42 @@
     </div>
   </section>
 
-  <!-- ══════════ CONTACT ══════════ -->
+  <!-- ════════ CONTACT ════════ -->
   <section id="contact" aria-label="Contact">
-    <div class="section-inner">
+    <div class="wrap">
       <div class="contact-grid">
+
+        <!-- left: info -->
         <div class="fade-up">
-          <p class="section-label" style="color:var(--sage);">Get In Touch</p>
+          <p class="eyebrow">Get In Touch</p>
           <h2 class="contact-title">Ready to talk cover crops?</h2>
-          <p class="contact-body">
-            Whether you're a small family operation or a large commercial farm, we'd love to hear
-            about your goals and see how cover crops can fit your system.
-          </p>
-          <ul class="contact-details">
+          <p class="contact-body">Whether you're a small family operation or a large commercial farm, we'd love to hear about your goals and explore how cover crops can fit your system.</p>
+          <ul class="contact-list">
             <li>
-              <span class="icon" aria-hidden="true">📍</span>
+              <span class="lbl">Address</span>
               <span>14209 Colfax Highway<br>Grass Valley, CA 95945</span>
             </li>
             <li>
-              <span class="icon" aria-hidden="true">📞</span>
+              <span class="lbl">Phone</span>
               <a href="tel:+18312353707">(831) 235-3707</a>
             </li>
             <li>
-              <span class="icon" aria-hidden="true">✉️</span>
+              <span class="lbl">Email</span>
               <a href="mailto:covercropseedcompany@gmail.com">covercropseedcompany@gmail.com</a>
             </li>
           </ul>
         </div>
-        <div class="fade-up" style="transition-delay:0.15s">
+
+        <!-- right: form -->
+        <div class="fade-up" style="transition-delay:.15s">
+          <!--
+            ╔══════════════════════════════════════════════════════╗
+            ║  FORM SETUP (free, takes 5 min):                     ║
+            ║  1. Go to https://formspree.io → create free account ║
+            ║  2. New Form → copy your Form ID                     ║
+            ║  3. Replace YOUR_FORM_ID in the action URL below     ║
+            ╚══════════════════════════════════════════════════════╝
+          -->
           <form
             class="contact-form"
             name="contact"
@@ -733,26 +668,21 @@
             action="https://formspree.io/f/mnjrepgl"
             aria-label="Contact form"
           >
-            <!--
-              FORM SETUP: This form uses Formspree (free tier, 50 submissions/month).
-              1. Go to https://formspree.io and create a free account
-              2. Create a new form → copy your Form ID
-              3. Replace YOUR_FORM_ID in the action URL above
-              Alternatively, delete the <form> and just list your email/phone for contact.
-            -->
-            <div class="form-field">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="Jane Farmer" required />
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Farmer" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="jane@yourfarm.com" required />
+              </div>
             </div>
-            <div class="form-field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="jane@yourfarm.com" required />
-            </div>
-            <div class="form-field">
+            <div class="field">
               <label for="farm">Farm / Operation (optional)</label>
               <input type="text" id="farm" name="farm" placeholder="Family Farm, LLC" />
             </div>
-            <div class="form-field">
+            <div class="field">
               <label for="interest">I'm interested in…</label>
               <select id="interest" name="interest">
                 <option value="">Select one</option>
@@ -762,46 +692,42 @@
                 <option>General inquiry</option>
               </select>
             </div>
-            <div class="form-field">
+            <div class="field">
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell us a bit about your farm and what you're looking to achieve…"></textarea>
+              <textarea id="message" name="message" placeholder="Tell us about your farm and what you're looking to achieve…"></textarea>
             </div>
-            <button type="submit" class="btn btn-sage" style="align-self:flex-start">Send Message</button>
+            <button type="submit" class="btn btn-solid" style="align-self:flex-start">Send Message</button>
           </form>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ══════════ FOOTER ══════════ -->
+  <!-- ════════ FOOTER ════════ -->
   <footer>
     <p>
-      © <span id="yr"></span> Cover Crop Seed Co. &nbsp;·&nbsp; Grass Valley, CA
-      &nbsp;·&nbsp; <a href="mailto:covercropseedcompany@gmail.com">covercropseedcompany@gmail.com</a>
+      © <span id="yr"></span> Cover Crop Seed Co.&ensp;·&ensp;Grass Valley, CA
+      &ensp;·&ensp;<a href="mailto:covercropseedcompany@gmail.com">covercropseedcompany@gmail.com</a>
     </p>
   </footer>
 
-  <!-- ──── Scripts ──────────────────────────────────────────────── -->
+  <!-- ── Scripts ─────────────────────────────────────────────────── -->
   <script>
-    // Dynamic copyright year
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // Nav shadow on scroll
+    // nav shadow on scroll
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
+      nav.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
 
-    // Intersection observer — fade-up animations
-    const io = new IntersectionObserver((entries) => {
+    // fade-up on scroll
+    const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
       });
-    }, { threshold: 0.12 });
-
+    }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
   </script>
 
