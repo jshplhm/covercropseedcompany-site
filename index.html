@@ -16,7 +16,7 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
 
   <style>
     /* ── Tokens ─────────────────────────────────────────────────── */
@@ -31,8 +31,8 @@
       --green-hover:#2e5235;
       --green-pale: #edf3ee;   /* card bg tint */
 
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'Jost', sans-serif;
+      --font-display: 'DM Sans', sans-serif;
+      --font-body:    'DM Sans', sans-serif;
 
       --nav-h: 64px;
       --max-w: 1080px;
@@ -46,7 +46,7 @@
       font-family: var(--font-body);
       background: var(--white);
       color: var(--text);
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
     }
@@ -78,9 +78,10 @@
     }
     .nav-logo {
       font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 400;
-      letter-spacing: .04em;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
       color: var(--text);
     }
     .nav-links {
@@ -90,9 +91,9 @@
     }
     .nav-links a {
       font-family: var(--font-body);
-      font-size: .78rem;
-      font-weight: 300;
-      letter-spacing: .12em;
+      font-size: .8rem;
+      font-weight: 400;
+      letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--muted);
       transition: color .2s;
@@ -105,8 +106,8 @@
       padding: 13px 34px;
       font-family: var(--font-body);
       font-size: .78rem;
-      font-weight: 300;
-      letter-spacing: .12em;
+      font-weight: 500;
+      letter-spacing: .1em;
       text-transform: uppercase;
       cursor: pointer;
       border: none;
@@ -178,9 +179,9 @@
     }
     .hero-headline {
       font-family: var(--font-display);
-      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
-      font-weight: 400;
-      line-height: 1.12;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.1;
       color: var(--white);
       max-width: 620px;
       margin-bottom: 22px;
@@ -188,7 +189,7 @@
     .hero-sub {
       font-family: var(--font-body);
       font-size: 1rem;
-      font-weight: 200;
+      font-weight: 400;
       color: rgba(255,255,255,.82);
       max-width: 500px;
       line-height: 1.75;
@@ -213,9 +214,8 @@
     }
     .intro-band-text {
       font-family: var(--font-display);
-      font-style: italic;
-      font-size: clamp(1.15rem, 2.2vw, 1.55rem);
-      font-weight: 300;
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      font-weight: 400;
       color: var(--text);
       max-width: 700px;
       margin: 0 auto;
@@ -256,24 +256,24 @@
 
     .eyebrow {
       font-family: var(--font-body);
-      font-size: .7rem;
-      font-weight: 300;
-      letter-spacing: .2em;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .18em;
       text-transform: uppercase;
       color: var(--green);
       margin-bottom: 14px;
     }
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(1.9rem, 3.2vw, 2.8rem);
-      font-weight: 400;
-      line-height: 1.2;
+      font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+      font-weight: 800;
+      line-height: 1.15;
       color: var(--text);
       margin-bottom: 22px;
     }
     .body-text {
-      font-size: .96rem;
-      font-weight: 300;
+      font-size: 1rem;
+      font-weight: 400;
       color: var(--muted);
       line-height: 1.85;
     }
@@ -306,8 +306,8 @@
 
     .svc-num {
       font-family: var(--font-display);
-      font-size: 2.4rem;
-      font-weight: 300;
+      font-size: 2rem;
+      font-weight: 800;
       color: var(--rule);
       line-height: 1;
       margin-bottom: 18px;
@@ -317,16 +317,16 @@
 
     .svc-title {
       font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 500;
+      font-size: 1.1rem;
+      font-weight: 700;
       color: var(--text);
       margin-bottom: 12px;
     }
     .svc-body {
-      font-size: .9rem;
-      font-weight: 300;
+      font-size: .95rem;
+      font-weight: 400;
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.75;
     }
 
     /* ── Management ─────────────────────────────────────────────── */
@@ -365,16 +365,16 @@
     }
     .contact-title {
       font-family: var(--font-display);
-      font-size: clamp(1.9rem, 3.2vw, 2.8rem);
-      font-weight: 400;
-      line-height: 1.2;
+      font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+      font-weight: 800;
+      line-height: 1.15;
       margin-bottom: 20px;
     }
     .contact-body {
-      font-size: .95rem;
-      font-weight: 300;
+      font-size: 1rem;
+      font-weight: 400;
       color: var(--muted);
-      line-height: 1.85;
+      line-height: 1.8;
       margin-bottom: 36px;
     }
     .contact-list {
@@ -382,19 +382,19 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-      font-size: .88rem;
-      font-weight: 300;
+      font-size: .93rem;
+      font-weight: 400;
       color: var(--muted);
     }
     .contact-list li { display: flex; gap: 10px; align-items: flex-start; }
     .contact-list .lbl {
       font-size: .68rem;
-      letter-spacing: .15em;
+      letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--green);
       min-width: 54px;
       padding-top: 3px;
-      font-weight: 400;
+      font-weight: 600;
     }
     .contact-list a { color: var(--muted); transition: color .2s; }
     .contact-list a:hover { color: var(--green); }
@@ -411,18 +411,18 @@
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .field { display: flex; flex-direction: column; gap: 7px; }
     .field label {
-      font-size: .68rem;
-      letter-spacing: .16em;
+      font-size: .7rem;
+      letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--muted);
-      font-weight: 300;
+      font-weight: 500;
     }
     .field input,
     .field textarea,
     .field select {
       font-family: var(--font-body);
-      font-size: .93rem;
-      font-weight: 300;
+      font-size: .95rem;
+      font-weight: 400;
       color: var(--text);
       background: var(--white);
       border: none;
