@@ -979,22 +979,29 @@
     const nav = document.getElementById('nav');
     let lastY = 0;
     let scrollUpDelta = 0;
-    const REVEAL_THRESHOLD = 40; // px of upward scroll needed to reveal
+    const REVEAL_THRESHOLD = 20;
     nav.classList.add('visible');
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
+      const maxY = document.documentElement.scrollHeight - window.innerHeight;
+      const nearBottom = y > maxY - 80;
+
       if (y < 10) {
-        // at top — always show
+        // at top — show
         nav.classList.add('visible');
         scrollUpDelta = 0;
+      } else if (nearBottom) {
+        // near bottom — suppress bounce
+        nav.classList.remove('visible');
+        scrollUpDelta = 0;
       } else if (y < lastY) {
-        // scrolling up — accumulate delta
+        // scrolling up — require 20px before revealing
         scrollUpDelta += lastY - y;
         if (scrollUpDelta >= REVEAL_THRESHOLD) {
           nav.classList.add('visible');
         }
       } else {
-        // scrolling down — hide and reset delta
+        // scrolling down — hide and reset
         nav.classList.remove('visible');
         scrollUpDelta = 0;
       }
