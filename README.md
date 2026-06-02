@@ -51,18 +51,11 @@ All three images are currently loaded from the old Squarespace CDN. Replace them
 
 ---
 
-## Setting up the contact form
+## Contact form
 
-The form uses [Formspree](https://formspree.io) — free, no server required.
+The form uses [Formspree](https://formspree.io) and is already configured (form ID `mnjrepgl`). Submissions go straight to your inbox — nothing else to set up.
 
-1. Go to [formspree.io](https://formspree.io) and create a free account
-2. Click **New Form** → give it a name → copy the **Form ID** (looks like `xkgnwpqz`)
-3. In `index.html`, find this line:
-   ```html
-   action="https://formspree.io/f/YOUR_FORM_ID"
-   ```
-4. Replace `YOUR_FORM_ID` with your actual ID
-5. Commit and push — forms will now land in your email inbox
+If you ever need to swap it out, find `action="https://formspree.io/f/mnjrepgl"` in `index.html` and replace the ID.
 
 ---
 
