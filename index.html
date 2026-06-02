@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cover Crop Seed Co.</title>
+  <meta name="description" content="Quality seeds, crop-specific programs and agronomic support to integrate cover cropping into your production system." />
+  <meta property="og:title" content="Cover Crop Seed Co." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.covercropseedcompany.com" />
+
+  <!-- Fonts: Playfair Display (display) + Source Serif 4 (body) — earthy, editorial, matches Squarespace feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Design Tokens ─────────────────────────────────────────── */
+    :root {
+      --soil:      #2c2418;   /* deep warm brown — primary text */
+      --earth:     #6b5c41;   /* mid brown — secondary text */
+      --clay:      #a08c6e;   /* muted tan — accents */
+      --straw:     #e8dfc8;   /* warm off-white — backgrounds */
+      --cream:     #f5f1e8;   /* near-white */
+      --sage:      #5a7a52;   /* muted green — CTA / links */
+      --sage-dark: #3f5a39;
+      --white:     #ffffff;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Source Serif 4', Georgia, serif;
+
+      --nav-h: 68px;
+      --section-gap: 110px;
+      --max-w: 1100px;
+    }
+
+    /* ─── Reset & Base ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--soil);
+      font-size: 18px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+
+    /* ─── Nav ───────────────────────────────────────────────────── */
+    #nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid #d6cdb8;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      transition: box-shadow 0.3s;
+    }
+    #nav.scrolled { box-shadow: 0 2px 18px rgba(44,36,24,0.10); }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--soil);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--earth);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--sage); }
+
+    /* ─── Hero ──────────────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      width: 100%;
+      min-height: 92vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    /* dark-to-light gradient overlay so text is readable */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(30,22,10,0.72) 0%,
+        rgba(30,22,10,0.30) 50%,
+        rgba(30,22,10,0.08) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 40px 72px;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 16px;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 600;
+      line-height: 1.18;
+      color: var(--white);
+      max-width: 640px;
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.82);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--sage);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.15s;
+    }
+    .btn:hover { background: var(--sage-dark); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.6);
+      color: var(--white);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+    /* ─── Sections shared ───────────────────────────────────────── */
+    section { scroll-margin-top: var(--nav-h); }
+
+    .section-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ─── Mission strip (thin divider row) ──────────────────────── */
+    #mission-strip {
+      background: var(--sage);
+      color: var(--white);
+      padding: 28px 0;
+      text-align: center;
+    }
+
+    .mission-strip-text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    /* ─── About ─────────────────────────────────────────────────── */
+    #about {
+      padding: var(--section-gap) 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-wrap img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+    /* subtle decorative frame offset */
+    .about-img-wrap::before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: -14px;
+      right: 14px;
+      bottom: 14px;
+      border: 1.5px solid var(--clay);
+      z-index: 0;
+    }
+    .about-img-wrap img { position: relative; z-index: 1; }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.22;
+      color: var(--soil);
+      margin-bottom: 24px;
+    }
+
+    .section-body {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--earth);
+      line-height: 1.8;
+    }
+    .section-body + .section-body { margin-top: 16px; }
+
+    /* ─── Services ──────────────────────────────────────────────── */
+    #services {
+      padding: var(--section-gap) 0;
+      background: var(--straw);
+    }
+
+    .services-header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 64px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .service-card {
+      background: var(--cream);
+      padding: 40px 32px 36px;
+      border-top: 3px solid var(--sage);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(44,36,24,0.10);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--soil);
+      margin-bottom: 12px;
+    }
+
+    .service-body {
+      font-size: 0.93rem;
+      font-weight: 300;
+      color: var(--earth);
+      line-height: 1.75;
+    }
+
+    /* ─── Management / Feature section ─────────────────────────── */
+    #management {
+      padding: var(--section-gap) 0;
+    }
+
+    .mgmt-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .mgmt-text { order: 1; }
+    .mgmt-img  { order: 2; }
+
+    .mgmt-img img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    .cta-row {
+      margin-top: 36px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-dark {
+      background: var(--soil);
+      color: var(--white);
+    }
+    .btn-dark:hover { background: var(--earth); }
+
+    /* ─── Contact ───────────────────────────────────────────────── */
+    #contact {
+      padding: var(--section-gap) 0;
+      background: var(--soil);
+      color: var(--straw);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .contact-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.22;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+
+    .contact-body {
+      font-size: 0.98rem;
+      font-weight: 300;
+      color: var(--clay);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .contact-details {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 0.93rem;
+      font-weight: 300;
+    }
+
+    .contact-details li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--straw);
+    }
+
+    .contact-details .icon {
+      color: var(--sage);
+      font-size: 1.05rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .contact-details a { color: var(--straw); transition: color 0.2s; }
+    .contact-details a:hover { color: var(--sage); }
+
+    /* Simple contact form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-field label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 300;
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 300;
+      padding: 12px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: rgba(255,255,255,0.25);
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus {
+      border-color: var(--sage);
+    }
+
+    .form-field textarea { resize: vertical; min-height: 120px; }
+
+    .form-field select option { background: var(--soil); }
+
+    .btn-sage { background: var(--sage); color: var(--white); }
+    .btn-sage:hover { background: var(--sage-dark); }
+
+    /* ─── Footer ────────────────────────────────────────────────── */
+    footer {
+      background: #1a1208;
+      color: var(--clay);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.82rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    footer a { color: var(--clay); transition: color 0.2s; }
+    footer a:hover { color: var(--straw); }
+
+    /* ─── Divider ornament ───────────────────────────────────────── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 48px 0 40px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--clay);
+      opacity: 0.35;
+    }
+    .divider span {
+      color: var(--sage);
+      font-size: 1.1rem;
+    }
+
+    /* ─── Scroll-in animations ──────────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ─── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      :root { --section-gap: 72px; }
+
+      .about-grid,
+      .mgmt-grid,
+      .contact-grid  { grid-template-columns: 1fr; gap: 40px; }
+
+      .mgmt-img { order: -1; }
+
+      .services-grid { grid-template-columns: 1fr; }
+
+      .about-img-wrap::before { display: none; }
+
+      .nav-links { display: none; } /* simple mobile hide — add hamburger if desired later */
+    }
+
+    @media (max-width: 520px) {
+      .hero-content { padding: 0 24px 56px; }
+      .section-inner { padding: 0 24px; }
+      .nav-inner { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════ NAV ══════════ -->
+  <nav id="nav" role="navigation" aria-label="Main">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Cover Crop Seed Co.</a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#management">Management</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section id="hero" aria-label="Hero">
+    <!--
+      SWAP THIS IMAGE: replace the src below with your own hero photo.
+      Ideal size: 2400×1600px, JPG, under 500KB (run through squoosh.app).
+      The Squarespace URL below still works for now as a placeholder.
+    -->
+    <img
+      class="hero-img"
+      src="https://images.squarespace-cdn.com/content/v1/662fe751488d864821321c5d/1714416315841-ZTL1T0WQNQDG20IQEJWR/image-asset.jpeg"
+      alt="Lush green cover crop field at sunrise"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Grass Valley, California</p>
+      <h1 class="hero-headline">Resilient Agriculture Through Cover Crops</h1>
+      <p class="hero-sub">
+        Quality seeds, crop-specific programs, and agronomic support to integrate
+        cover cropping into your production system.
+      </p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="#contact" class="btn">Request a Consultation</a>
+        <a href="#about" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ MISSION STRIP ══════════ -->
+  <div id="mission-strip" aria-label="Mission statement">
+    <div class="section-inner">
+      <p class="mission-strip-text">
+        "Cultivating resiliency on the farm, for the farm — with a commitment to those who grow our food."
+      </p>
+    </div>
+  </div>
+
+  <!-- ══════════ ABOUT ══════════ -->
+  <section id="about" aria-label="About">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-img-wrap fade-up">
+          <!--
+            SWAP: replace with your preferred team or field photo.
+            Recommended: portrait-oriented (4:5 ratio), 900×1125px.
+          -->
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/662fe751488d864821321c5d/1714422657423-VMMM86Z1LAPRK73F9R8K/image-asset.jpeg"
+            alt="Cover crop field in early growth stage"
+            loading="lazy"
+          />
+        </div>
+        <div class="fade-up" style="transition-delay:0.15s">
+          <p class="section-label">Our Story</p>
+          <h2 class="section-title">Making a positive impact in our industry is possible. We've done it before.</h2>
+          <p class="section-body">
+            Our leadership team brings over 10 years of global agronomy experience to take on the greatest
+            challenge of our time — growing in a way that sustains our land, our farmers, and our food system.
+          </p>
+          <p class="section-body">
+            Based in Grass Valley, CA, we work directly with farmers to design cover crop programs that
+            improve soil health, reduce inputs, and build long-term resilience into every operation we touch.
+          </p>
+          <div class="divider"><span>✦</span></div>
+          <p class="section-body" style="font-style:italic;color:var(--soil);">
+            Over 10 years of global agronomy experience. One clear mission.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ SERVICES ══════════ -->
+  <section id="services" aria-label="Services">
+    <div class="section-inner">
+      <div class="services-header fade-up">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">A complete cover crop program — from seed to agronomic support</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-up">
+          <span class="service-icon" aria-hidden="true">🌱</span>
+          <h3 class="service-title">Quality Seed Supply</h3>
+          <p class="service-body">
+            We source and supply high-quality cover crop seed varieties suited to your region,
+            soil type, and production goals. No one-size-fits-all — every seed selection is tailored.
+          </p>
+        </div>
+        <div class="service-card fade-up" style="transition-delay:0.1s">
+          <span class="service-icon" aria-hidden="true">📋</span>
+          <h3 class="service-title">Crop-Specific Programs</h3>
+          <p class="service-body">
+            Cover cropping is a crop-specific, farm-specific process. We build programs around your
+            rotation, cash crops, and long-term soil health targets — not a catalog order.
+          </p>
+        </div>
+        <div class="service-card fade-up" style="transition-delay:0.2s">
+          <span class="service-icon" aria-hidden="true">🤝</span>
+          <h3 class="service-title">Agronomic Consulting</h3>
+          <p class="service-body">
+            Our team offers on-farm consultations, implementation guidance, and season-long
+            support to help you get it right the first time — and every season after.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ MANAGEMENT ══════════ -->
+  <section id="management" aria-label="Cover crop management">
+    <div class="section-inner">
+      <div class="mgmt-grid">
+        <div class="mgmt-text fade-up">
+          <p class="section-label">Cover Crop Management</p>
+          <h2 class="section-title">Every farm is different. Your cover crop program should be too.</h2>
+          <p class="section-body">
+            Cover cropping is not a product you plug in — it's an agronomic practice shaped by your
+            soil, your climate, your cash crop, and your goals. Whether you're just getting started or
+            looking to optimize an existing program, we bring the science and the field experience.
+          </p>
+          <p class="section-body" style="margin-top:16px;">
+            Please reach out for a consultation to learn more about how cover crops can become a
+            productive part of your production system.
+          </p>
+          <div class="cta-row">
+            <a href="#contact" class="btn btn-dark">Schedule a Consultation</a>
+          </div>
+        </div>
+        <div class="mgmt-img fade-up" style="transition-delay:0.15s">
+          <!--
+            SWAP: replace with a management / field operation photo.
+            Landscape ratio (4:3) works best here. 1200×900px recommended.
+          -->
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/662fe751488d864821321c5d/ec55f024-2ebd-44e9-8b2a-45f85a32cff2/Screenshot+2024-12-19+at+1.33.45%E2%80%AFPM.png"
+            alt="Cover crop management in the field"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTACT ══════════ -->
+  <section id="contact" aria-label="Contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="fade-up">
+          <p class="section-label" style="color:var(--sage);">Get In Touch</p>
+          <h2 class="contact-title">Ready to talk cover crops?</h2>
+          <p class="contact-body">
+            Whether you're a small family operation or a large commercial farm, we'd love to hear
+            about your goals and see how cover crops can fit your system.
+          </p>
+          <ul class="contact-details">
+            <li>
+              <span class="icon" aria-hidden="true">📍</span>
+              <span>14209 Colfax Highway<br>Grass Valley, CA 95945</span>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">📞</span>
+              <a href="tel:+18312353707">(831) 235-3707</a>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">✉️</span>
+              <a href="mailto:covercropseedcompany@gmail.com">covercropseedcompany@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="fade-up" style="transition-delay:0.15s">
+          <form
+            class="contact-form"
+            name="contact"
+            method="POST"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            aria-label="Contact form"
+          >
+            <!--
+              FORM SETUP: This form uses Formspree (free tier, 50 submissions/month).
+              1. Go to https://formspree.io and create a free account
+              2. Create a new form → copy your Form ID
+              3. Replace YOUR_FORM_ID in the action URL above
+              Alternatively, delete the <form> and just list your email/phone for contact.
+            -->
+            <div class="form-field">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Farmer" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@yourfarm.com" required />
+            </div>
+            <div class="form-field">
+              <label for="farm">Farm / Operation (optional)</label>
+              <input type="text" id="farm" name="farm" placeholder="Family Farm, LLC" />
+            </div>
+            <div class="form-field">
+              <label for="interest">I'm interested in…</label>
+              <select id="interest" name="interest">
+                <option value="">Select one</option>
+                <option>Seed supply</option>
+                <option>A crop-specific program</option>
+                <option>An agronomic consultation</option>
+                <option>General inquiry</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us a bit about your farm and what you're looking to achieve…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-sage" style="align-self:flex-start">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer>
+    <p>
+      © <span id="yr"></span> Cover Crop Seed Co. &nbsp;·&nbsp; Grass Valley, CA
+      &nbsp;·&nbsp; <a href="mailto:covercropseedcompany@gmail.com">covercropseedcompany@gmail.com</a>
+    </p>
+  </footer>
+
+  <!-- ──── Scripts ──────────────────────────────────────────────── -->
+  <script>
+    // Dynamic copyright year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Nav shadow on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // Intersection observer — fade-up animations
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
