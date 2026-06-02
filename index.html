@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cover Crop Seed Co. | Cover Crop Seeds &amp; Agronomic Consulting | Grass Valley, CA</title>
   <meta name="description" content="Cover Crop Seed Co. provides quality cover crop seeds, farm-specific programs, and hands-on agronomic consulting to California farmers. Located in Grass Valley, CA, serving the Sierra Foothills, Sacramento Valley, and beyond." />
+
   <!-- Open Graph -->
   <meta property="og:title" content="Cover Crop Seed Co. | Cover Crop Seeds &amp; Agronomic Consulting" />
   <meta property="og:description" content="Quality cover crop seeds, farm-specific programs, and agronomic consulting for California farmers. Based in Grass Valley, CA." />
@@ -25,57 +26,54 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://www.covercropseedcompany.com/" />
 
-  <!-- Geo tags for local search -->
+  <!-- Favicon — drop favicon.png in your repo root -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+
+  <!-- Geo -->
   <meta name="geo.region" content="US-CA" />
   <meta name="geo.placename" content="Grass Valley, California" />
   <meta name="geo.position" content="39.2196;-121.0606" />
   <meta name="ICBM" content="39.2196, -121.0606" />
 
-  <!--
-    Fonts:
-    - Cormorant Garamond → display/headlines (elegant, editorial, serif — matches Squarespace vibe)
-    - Jost              → body/nav (clean, geometric, light weight)
-  -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
 
   <style>
-    /* ── Tokens ─────────────────────────────────────────────────── */
+    /* ── Tokens ──────────────────────────────────────────────────── */
     :root {
-      --white:      #ffffff;
-      --off-white:  #f9f9f7;
-      --light-grey: #f2f1ee;
-      --rule:       #e0ddd8;
-      --text:       #1a1a18;
-      --muted:      #6b6b65;
-      --green:      #4a8a54;   /* CTA / accent — lighter for hero contrast */
-      --green-hover:#3a6e42;
-      --green-pale: #edf3ee;   /* card bg tint */
-
-      --font-display: 'DM Sans', sans-serif;
-      --font-body:    'DM Sans', sans-serif;
-
-      --nav-h: 64px;
-      --max-w: 1080px;
-      --gap:   96px;
+      --white:       #ffffff;
+      --off-white:   #f7f6f3;
+      --light-grey:  #f0eeea;
+      --rule:        #dedad4;
+      --text:        #1a1a18;
+      --muted:       #5e5e58;
+      --green:       #3d6b45;
+      --green-light: #4e855a;
+      --green-pale:  #eaf1eb;
+      --font:        'DM Sans', sans-serif;
+      --nav-h:       68px;
+      --max-w:       1080px;
+      --gap:         100px;
     }
 
-    /* ── Reset ──────────────────────────────────────────────────── */
+    /* ── Reset ───────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: var(--font-body);
+      font-family: var(--font);
       background: var(--white);
       color: var(--text);
-      font-size: 17px;
+      font-size: 18px;
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
     }
     img { display: block; max-width: 100%; }
     a   { color: inherit; text-decoration: none; }
 
-    /* ── Nav ────────────────────────────────────────────────────── */
+    /* ── Nav ─────────────────────────────────────────────────────── */
     #nav {
       position: sticky;
       top: 0;
@@ -87,7 +85,7 @@
       align-items: center;
       transition: box-shadow .3s;
     }
-    #nav.scrolled { box-shadow: 0 1px 20px rgba(0,0,0,.07); }
+    #nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,.08); }
 
     .nav-inner {
       max-width: var(--max-w);
@@ -99,21 +97,19 @@
       justify-content: space-between;
     }
     .nav-logo {
-      font-family: var(--font-display);
       font-size: 1rem;
       font-weight: 600;
-      letter-spacing: .05em;
+      letter-spacing: .06em;
       text-transform: uppercase;
       color: var(--text);
     }
     .nav-links {
       display: flex;
-      gap: 40px;
+      gap: 36px;
       list-style: none;
     }
     .nav-links a {
-      font-family: var(--font-body);
-      font-size: .8rem;
+      font-size: .82rem;
       font-weight: 400;
       letter-spacing: .08em;
       text-transform: uppercase;
@@ -122,12 +118,60 @@
     }
     .nav-links a:hover { color: var(--green); }
 
-    /* ── Buttons ────────────────────────────────────────────────── */
+    /* hamburger — mobile only */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      transition: transform .25s, opacity .25s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* mobile drawer */
+    .nav-drawer {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
+      padding: 24px 28px 28px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0;
+    }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--text);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--rule);
+      transition: color .2s;
+    }
+    .nav-drawer a:last-child { border-bottom: none; }
+    .nav-drawer a:hover { color: var(--green); }
+
+    /* ── Buttons ─────────────────────────────────────────────────── */
     .btn {
       display: inline-block;
-      padding: 13px 34px;
-      font-family: var(--font-body);
-      font-size: .78rem;
+      padding: 15px 36px;
+      font-family: var(--font);
+      font-size: .82rem;
       font-weight: 500;
       letter-spacing: .1em;
       text-transform: uppercase;
@@ -135,91 +179,102 @@
       border: none;
       transition: background .22s, transform .15s, color .22s;
     }
-    .btn-solid {
-      background: var(--green);
-      color: var(--white);
-    }
-    .btn-solid:hover { background: var(--green-hover); transform: translateY(-1px); }
+    .btn-solid  { background: var(--green); color: var(--white); }
+    .btn-solid:hover { background: var(--green-light); transform: translateY(-1px); }
     .btn-outline-dark {
       background: transparent;
-      border: 1px solid var(--text);
+      border: 1.5px solid var(--text);
       color: var(--text);
     }
     .btn-outline-dark:hover { background: var(--text); color: var(--white); }
     .btn-outline-white {
       background: transparent;
-      border: 1px solid rgba(255,255,255,.65);
+      border: 1.5px solid rgba(255,255,255,.7);
       color: var(--white);
     }
-    .btn-outline-white:hover { background: rgba(255,255,255,.12); }
+    .btn-outline-white:hover { background: rgba(255,255,255,.15); }
 
-    /* ── Hero ───────────────────────────────────────────────────── */
-    #hero {
+    /* ── Hero — full-bleed photo, NO text on top ─────────────────── */
+    /* The photo is purely visual. Text lives in the white band below. */
+    #hero-photo {
       position: relative;
       width: 100%;
-      min-height: 94vh;
-      display: flex;
-      align-items: flex-end;
+      height: 62vh;          /* shorter — wide cinematic crop */
+      min-height: 340px;
+      max-height: 680px;
       overflow: hidden;
-      background: #c8d4c0; /* fallback while image loads */
+      background: #b8cbb0;
     }
     .hero-img {
-      position: absolute;
-      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 40%;
+      object-position: center 35%;
+      display: block;
     }
-    .hero-overlay {
+    /* very subtle bottom vignette — only for depth, not for text legibility */
+    #hero-photo::after {
+      content: '';
       position: absolute;
       inset: 0;
-      /* gentle bottom darkening only — keeps the bright field visible */
       background: linear-gradient(
-        to top,
-        rgba(10,14,9,.62) 0%,
-        rgba(10,14,9,.22) 45%,
-        rgba(10,14,9,.05) 100%
+        to bottom,
+        rgba(0,0,0,0) 55%,
+        rgba(0,0,0,.18) 100%
       );
+      pointer-events: none;
     }
-    .hero-content {
-      position: relative;
-      z-index: 2;
+
+    /* ── Hero text band — white, clean, crisp ────────────────────── */
+    #hero-band {
+      background: var(--white);
+      padding: 64px 0 72px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .hero-band-inner {
       max-width: var(--max-w);
       margin: 0 auto;
-      padding: 0 40px 80px;
-      width: 100%;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
     }
-    .hero-eyebrow {
-      font-family: var(--font-body);
-      font-size: .72rem;
-      font-weight: 300;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.6);
-      margin-bottom: 14px;
-    }
-    .hero-headline {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4.5vw, 3.4rem);
+    .hero-hl {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
       font-weight: 700;
-      line-height: 1.12;
-      color: var(--white);
-      max-width: 620px;
-      margin-bottom: 22px;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 20px;
     }
     .hero-sub {
-      font-family: var(--font-body);
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 400;
-      color: rgba(255,255,255,.82);
-      max-width: 500px;
-      line-height: 1.75;
-      margin-bottom: 38px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 32px;
     }
     .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-tagline {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.75;
+      padding-left: 24px;
+      border-left: 3px solid var(--green);
+    }
+    .hero-tagline em {
+      display: block;
+      margin-top: 16px;
+      font-size: .85rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--green);
+      font-style: normal;
+    }
 
-    /* ── Section shared ─────────────────────────────────────────── */
+    /* ── Section shared ──────────────────────────────────────────── */
     section { scroll-margin-top: var(--nav-h); }
     .wrap {
       max-width: var(--max-w);
@@ -227,71 +282,20 @@
       padding: 0 40px;
     }
 
-    /* ── Intro band ─────────────────────────────────────────────── */
-    #intro-band {
-      background: var(--off-white);
-      border-bottom: 1px solid var(--rule);
-      padding: 52px 0;
-      text-align: center;
-    }
-    .intro-band-text {
-      font-family: var(--font-display);
-      font-size: clamp(1rem, 1.8vw, 1.25rem);
-      font-weight: 400;
-      color: var(--text);
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.55;
-    }
-
-    /* ── About ──────────────────────────────────────────────────── */
-    #about { padding: var(--gap) 0; }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .two-col.reverse .col-img { order: 2; }
-    .two-col.reverse .col-text { order: 1; }
-
-    .col-img img {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-    }
-    /* thin ruled border offset */
-    .col-img {
-      position: relative;
-    }
-    .col-img::after {
-      content: '';
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      right: -12px;
-      bottom: -12px;
-      border: 1px solid var(--rule);
-      z-index: -1;
-    }
-
     .eyebrow {
-      font-family: var(--font-body);
-      font-size: .72rem;
+      font-size: .75rem;
       font-weight: 500;
-      letter-spacing: .18em;
+      letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--green);
       margin-bottom: 14px;
     }
     .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 2.8vw, 2.4rem);
+      font-size: clamp(1.8rem, 2.8vw, 2.5rem);
       font-weight: 700;
       line-height: 1.15;
       color: var(--text);
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
     .body-text {
       font-size: 1.05rem;
@@ -299,9 +303,44 @@
       color: var(--muted);
       line-height: 1.85;
     }
-    .body-text + .body-text { margin-top: 14px; }
+    .body-text + .body-text { margin-top: 16px; }
+    .ruled-gap {
+      width: 48px;
+      height: 1px;
+      background: var(--rule);
+      margin: 32px 0;
+    }
 
-    /* ── Services ───────────────────────────────────────────────── */
+    /* ── Two-col layout ──────────────────────────────────────────── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .two-col.reverse .col-img  { order: 2; }
+    .two-col.reverse .col-text { order: 1; }
+
+    .col-img { position: relative; }
+    .col-img img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      display: block;
+    }
+    .col-img::after {
+      content: '';
+      position: absolute;
+      top: 12px; left: 12px;
+      right: -12px; bottom: -12px;
+      border: 1px solid var(--rule);
+      z-index: -1;
+    }
+
+    /* ── About ───────────────────────────────────────────────────── */
+    #about { padding: var(--gap) 0; }
+
+    /* ── Services ────────────────────────────────────────────────── */
     #services {
       padding: var(--gap) 0;
       background: var(--off-white);
@@ -310,13 +349,13 @@
     }
     .services-hd {
       text-align: center;
-      max-width: 540px;
+      max-width: 560px;
       margin: 0 auto 60px;
     }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2px; /* hair gap = ruled lines between cards */
+      gap: 2px;
       background: var(--rule);
     }
     .service-card {
@@ -325,97 +364,87 @@
       transition: background .22s;
     }
     .service-card:hover { background: var(--green-pale); }
-
     .svc-num {
-      font-family: var(--font-display);
       font-size: 2.2rem;
       font-weight: 700;
       color: var(--rule);
       line-height: 1;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       transition: color .22s;
     }
     .service-card:hover .svc-num { color: var(--green); }
-
     .svc-title {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 600;
       color: var(--text);
       margin-bottom: 12px;
     }
     .svc-body {
-      font-size: .95rem;
+      font-size: 1rem;
       font-weight: 400;
       color: var(--muted);
-      line-height: 1.75;
+      line-height: 1.8;
     }
 
-    /* ── Management ─────────────────────────────────────────────── */
+    /* ── Management ──────────────────────────────────────────────── */
     #management { padding: var(--gap) 0; }
-
+    .mgmt-img { position: relative; }
     .mgmt-img img {
       width: 100%;
-      aspect-ratio: 16/10;
+      aspect-ratio: 4/3;
       object-fit: cover;
-    }
-    .mgmt-img {
-      position: relative;
     }
     .mgmt-img::after {
       content: '';
       position: absolute;
-      top: -12px;
-      right: 12px;
-      left: -12px;
-      bottom: 12px;
+      top: -12px; right: 12px;
+      left: -12px; bottom: 12px;
       border: 1px solid var(--rule);
       z-index: -1;
     }
 
-    /* ── Contact ────────────────────────────────────────────────── */
+    /* ── Contact ─────────────────────────────────────────────────── */
     #contact {
-      padding: var(--gap) 0 calc(var(--gap) + 16px);
+      padding: var(--gap) 0 calc(var(--gap) + 20px);
       background: var(--light-grey);
       border-top: 1px solid var(--rule);
     }
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1.4fr;
+      grid-template-columns: 1fr 1.5fr;
       gap: 80px;
       align-items: start;
     }
     .contact-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 2.8vw, 2.4rem);
+      font-size: clamp(1.8rem, 2.8vw, 2.5rem);
       font-weight: 700;
       line-height: 1.15;
       margin-bottom: 20px;
     }
     .contact-body {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 400;
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.85;
       margin-bottom: 36px;
     }
     .contact-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      font-size: .93rem;
+      gap: 18px;
+      font-size: 1rem;
       font-weight: 400;
       color: var(--muted);
     }
-    .contact-list li { display: flex; gap: 10px; align-items: flex-start; }
+    .contact-list li { display: flex; gap: 12px; align-items: flex-start; }
     .contact-list .lbl {
-      font-size: .68rem;
-      letter-spacing: .12em;
+      font-size: .72rem;
+      letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--green);
-      min-width: 54px;
-      padding-top: 3px;
+      min-width: 56px;
+      padding-top: 4px;
       font-weight: 600;
     }
     .contact-list a { color: var(--muted); transition: color .2s; }
@@ -428,13 +457,13 @@
       border: 1px solid var(--rule);
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 24px;
     }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
     .field label {
-      font-size: .7rem;
-      letter-spacing: .12em;
+      font-size: .72rem;
+      letter-spacing: .14em;
       text-transform: uppercase;
       color: var(--muted);
       font-weight: 500;
@@ -442,84 +471,123 @@
     .field input,
     .field textarea,
     .field select {
-      font-family: var(--font-body);
-      font-size: .95rem;
+      font-family: var(--font);
+      font-size: 1rem;
       font-weight: 400;
       color: var(--text);
       background: var(--white);
       border: none;
-      border-bottom: 1px solid var(--rule);
+      border-bottom: 1.5px solid var(--rule);
       padding: 10px 0;
       outline: none;
       transition: border-color .2s;
       width: 100%;
-      -webkit-appearance: none;
       border-radius: 0;
+      -webkit-appearance: none;
     }
     .field input::placeholder,
-    .field textarea::placeholder { color: #c0bdb8; }
+    .field textarea::placeholder { color: #c4c0bb; }
     .field input:focus,
     .field textarea:focus,
     .field select:focus { border-bottom-color: var(--green); }
-    .field textarea { resize: vertical; min-height: 110px; }
-    .field select { cursor: pointer; background-image: none; }
+    .field textarea { resize: vertical; min-height: 120px; }
+    .field select { cursor: pointer; }
 
-    /* ── Hr ornament ────────────────────────────────────────────── */
-    .ruled-gap {
-      width: 48px;
-      height: 1px;
-      background: var(--rule);
-      margin: 30px 0;
+    /* form success state */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 48px 32px;
+      background: var(--white);
+      border: 1px solid var(--rule);
+    }
+    .form-success.visible { display: block; }
+    .form-success svg {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 20px;
+    }
+    .form-success h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .form-success p {
+      font-size: 1rem;
+      color: var(--muted);
     }
 
-    /* ── Footer ─────────────────────────────────────────────────── */
+    /* ── Footer ──────────────────────────────────────────────────── */
     footer {
       background: var(--text);
       color: rgba(255,255,255,.4);
       text-align: center;
       padding: 28px 24px;
-      font-size: .78rem;
-      font-weight: 300;
-      letter-spacing: .06em;
+      font-size: .85rem;
+      font-weight: 400;
+      letter-spacing: .05em;
     }
-    footer a { color: rgba(255,255,255,.4); transition: color .2s; }
-    footer a:hover { color: rgba(255,255,255,.8); }
 
-    /* ── Animations ─────────────────────────────────────────────── */
+    /* ── Animations ──────────────────────────────────────────────── */
     .fade-up {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(22px);
       transition: opacity .65s ease, transform .65s ease;
     }
     .fade-up.visible { opacity: 1; transform: none; }
 
-    /* ── Responsive ─────────────────────────────────────────────── */
-    @media (max-width: 900px) {
-      :root { --gap: 70px; }
-      .two-col, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    /* ── Responsive ──────────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      :root { --gap: 72px; }
+
+      /* show hamburger, hide desktop links */
+      .nav-toggle  { display: flex; }
+      .nav-links   { display: none; }
+
+      /* hero band stacks */
+      .hero-band-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .hero-tagline {
+        padding-left: 20px;
+      }
+
+      /* hero photo shorter on mobile */
+      #hero-photo { height: 52vw; min-height: 220px; }
+
+      /* two-col stacks */
+      .two-col,
+      .contact-grid { grid-template-columns: 1fr; gap: 44px; }
       .two-col.reverse .col-img { order: -1; }
-      .col-img::after, .mgmt-img::after { display: none; }
+      .col-img::after,
+      .mgmt-img::after { display: none; }
+
+      /* services stack */
       .services-grid { grid-template-columns: 1fr; }
-      .contact-form { padding: 36px 28px; }
+
+      /* form full-width */
       .form-row { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+      .contact-form { padding: 32px 24px; }
     }
+
     @media (max-width: 540px) {
-      .hero-content, .wrap { padding-left: 22px; padding-right: 22px; }
+      body { font-size: 17px; }
+      .hero-band-inner,
+      .wrap { padding-left: 22px; padding-right: 22px; }
       .nav-inner { padding: 0 20px; }
+      .hero-hl { font-size: 1.9rem; }
+      .service-card { padding: 32px 24px; }
     }
   </style>
 
-  <!-- ═══════════════════════════════════════════════════
-       Structured Data — JSON-LD
-       Targets: Google Search, Maps, AI Overviews,
-                ChatGPT Search, Gemini, Perplexity, Claude
-       ═══════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════
+       Structured Data JSON-LD
+       ═══════════════════════════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
-
       {
         "@type": "LocalBusiness",
         "@id": "https://www.covercropseedcompany.com/#business",
@@ -544,26 +612,11 @@
           "longitude": -121.0606
         },
         "areaServed": [
-          {
-            "@type": "State",
-            "name": "California"
-          },
-          {
-            "@type": "City",
-            "name": "Grass Valley"
-          },
-          {
-            "@type": "City",
-            "name": "Nevada City"
-          },
-          {
-            "@type": "AdministrativeArea",
-            "name": "Sierra Foothills"
-          },
-          {
-            "@type": "AdministrativeArea",
-            "name": "Sacramento Valley"
-          }
+          { "@type": "State", "name": "California" },
+          { "@type": "City",  "name": "Grass Valley" },
+          { "@type": "City",  "name": "Nevada City" },
+          { "@type": "AdministrativeArea", "name": "Sierra Foothills" },
+          { "@type": "AdministrativeArea", "name": "Sacramento Valley" }
         ],
         "serviceType": [
           "Cover Crop Seeds",
@@ -581,7 +634,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Quality Cover Crop Seed Supply",
-                "description": "We source and supply high-quality cover crop seed varieties suited to your region, soil type, and production goals. Every seed selection is tailored to the individual farm."
+                "description": "High-quality cover crop seed varieties selected for your region, soil type, and production goals."
               }
             },
             {
@@ -589,7 +642,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Crop-Specific Cover Crop Programs",
-                "description": "Farm-specific cover crop programs designed around your crop rotation, cash crops, and long-term soil health targets, from planning through termination."
+                "description": "Farm-specific programs designed around your crop rotation, cash crops, and long-term soil health targets."
               }
             },
             {
@@ -597,57 +650,29 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Agronomic Consulting",
-                "description": "On-farm consultations, implementation guidance, and season-long agronomic support to integrate cover cropping into your production system."
+                "description": "On-farm consultations, implementation guidance, and season-long agronomic support."
               }
             }
           ]
         },
         "knowsAbout": [
-          "Cover crops",
-          "Soil health",
-          "Regenerative agriculture",
-          "Agronomy",
-          "Crop rotation",
-          "California farming",
-          "Sierra Foothills agriculture",
-          "Sacramento Valley farming",
-          "Cover crop seed selection",
-          "Farm resilience"
+          "Cover crops", "Soil health", "Regenerative agriculture", "Agronomy",
+          "Crop rotation", "California farming", "Sierra Foothills agriculture",
+          "Sacramento Valley farming", "Cover crop seed selection", "Farm resilience"
         ],
         "slogan": "Cultivating resiliency on the farm, for the farm.",
         "image": "https://www.covercropseedcompany.com/images/og-cover.jpg",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.covercropseedcompany.com/images/logo.png"
-        },
-        "sameAs": [
-          "https://www.covercropseedcompany.com"
-        ]
+        "logo": { "@type": "ImageObject", "url": "https://www.covercropseedcompany.com/favicon.png" },
+        "sameAs": ["https://www.covercropseedcompany.com"]
       },
-
       {
         "@type": "WebSite",
         "@id": "https://www.covercropseedcompany.com/#website",
         "url": "https://www.covercropseedcompany.com",
         "name": "Cover Crop Seed Co.",
-        "description": "Quality cover crop seeds and agronomic consulting for California farmers.",
-        "publisher": {
-          "@id": "https://www.covercropseedcompany.com/#business"
-        },
+        "publisher": { "@id": "https://www.covercropseedcompany.com/#business" },
         "inLanguage": "en-US"
       },
-
-      {
-        "@type": "WebPage",
-        "@id": "https://www.covercropseedcompany.com/#webpage",
-        "url": "https://www.covercropseedcompany.com",
-        "name": "Cover Crop Seed Co. | Cover Crop Seeds & Agronomic Consulting | Grass Valley, CA",
-        "description": "Cover Crop Seed Co. provides quality cover crop seeds, farm-specific programs, and hands-on agronomic consulting to California farmers. Located in Grass Valley, CA.",
-        "isPartOf": { "@id": "https://www.covercropseedcompany.com/#website" },
-        "about": { "@id": "https://www.covercropseedcompany.com/#business" },
-        "inLanguage": "en-US"
-      },
-
       {
         "@type": "FAQPage",
         "mainEntity": [
@@ -656,7 +681,7 @@
             "name": "What is Cover Crop Seed Co.?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Cover Crop Seed Co. is an agronomic consulting and seed supply company based in Grass Valley, California. We help farmers integrate cover crops into their production systems through quality seeds, customized crop-specific programs, and on-farm support."
+              "text": "Cover Crop Seed Co. is an agronomic consulting and seed supply company based in Grass Valley, California. We help farmers integrate cover crops into their production systems through quality seeds, customized farm programs, and on-farm support."
             }
           },
           {
@@ -664,7 +689,7 @@
             "name": "What cover crop services does Cover Crop Seed Co. offer?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We offer three core services: (1) Quality cover crop seed supply tailored to your region and soil type, (2) Crop-specific cover crop programs designed around your rotation and goals, and (3) Agronomic consulting including on-farm consultations and season-long support."
+              "text": "We offer three core services: quality cover crop seed supply tailored to your region and soil type, crop-specific programs designed around your rotation and goals, and agronomic consulting including on-farm consultations and season-long support."
             }
           },
           {
@@ -672,7 +697,7 @@
             "name": "Where is Cover Crop Seed Co. located and what areas do they serve?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We are located at 14209 Colfax Highway, Grass Valley, CA 95945. We serve farmers throughout California, with a focus on the Sierra Foothills, Sacramento Valley, and surrounding regions."
+              "text": "We are located at 14209 Colfax Highway, Grass Valley, CA 95945. We serve farmers throughout California with a focus on the Sierra Foothills, Sacramento Valley, and surrounding regions."
             }
           },
           {
@@ -680,7 +705,7 @@
             "name": "How do I get started with a cover crop program?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The best first step is to schedule a consultation. You can reach us at (831) 235-3707 or covercropseedcompany@gmail.com, or fill out the contact form at covercropseedcompany.com. We'll discuss your farm, your goals, and how cover crops can fit your production system."
+              "text": "Contact us at (831) 235-3707 or covercropseedcompany@gmail.com, or use the contact form at covercropseedcompany.com. We will discuss your farm, your goals, and how cover crops can fit your production system."
             }
           },
           {
@@ -688,66 +713,73 @@
             "name": "Why use cover crops on my farm?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Cover crops improve soil health, reduce erosion, suppress weeds, fix nitrogen, and build long-term farm resilience. They are a proven tool for sustainable and regenerative agriculture. Cover cropping is a farm-specific practice and works best when tailored to your soil, climate, and cash crop rotation."
+              "text": "Cover crops improve soil health, reduce erosion, suppress weeds, fix nitrogen, and build long-term farm resilience. They work best when tailored to your soil, climate, and cash crop rotation."
             }
           }
         ]
       }
-
     ]
   }
   </script>
-
 </head>
 <body>
 
   <!-- ════════ NAV ════════ -->
   <nav id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo">Cover Crop Seed Co.</a>
+      <a href="#hero-photo" class="nav-logo">Cover Crop Seed Co.</a>
       <ul class="nav-links" role="list">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#management">Management</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <!-- mobile hamburger -->
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- mobile drawer -->
+    <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+      <a href="#about"      class="drawer-link">About</a>
+      <a href="#services"   class="drawer-link">Services</a>
+      <a href="#management" class="drawer-link">Management</a>
+      <a href="#contact"    class="drawer-link">Contact</a>
     </div>
   </nav>
 
-  <!-- ════════ HERO ════════ -->
-  <section id="hero" aria-label="Hero">
+  <!-- ════════ HERO PHOTO — full-bleed, no text ════════ -->
+  <div id="hero-photo" aria-hidden="true">
     <!--
-      ╔══════════════════════════════════════════════════╗
-      ║  IMAGE SWAP — replace src with your own photo    ║
-      ║  Recommended: 2400×1600px JPG, <500 KB           ║
-      ║  Run through https://squoosh.app before upload   ║
-      ╚══════════════════════════════════════════════════╝
+      IMAGE: replace src with your own photo.
+      Ideal: 2400×1400px JPG, <500 KB. Run through squoosh.app first.
     -->
     <img
       class="hero-img"
       src="https://images.squarespace-cdn.com/content/v1/662fe751488d864821321c5d/1714416315841-ZTL1T0WQNQDG20IQEJWR/image-asset.jpeg"
-      alt="Vibrant green cover crop field"
+      alt=""
       loading="eager"
       fetchpriority="high"
     />
-    <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Grass Valley, California</p>
-      <h1 class="hero-headline">Resilient Agriculture Through Cover Crops</h1>
-      <p class="hero-sub">We provide quality seeds, crop specific programs and agronomic support to integrate cover cropping into your production system. We strive to cultivate resiliency on the farm, for the farm, with a commitment to those who grow our food.</p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn btn-solid">Request a Consultation</a>
-        <a href="#about"   class="btn btn-outline-white">Learn More</a>
-      </div>
-    </div>
-  </section>
+  </div>
 
-  <!-- ════════ INTRO BAND ════════ -->
-  <div id="intro-band">
-    <div class="wrap">
-      <p class="intro-band-text">
-        "We strive to cultivate resiliency on the farm, for the farm, with a commitment to those who grow our food."
-      </p>
+  <!-- ════════ HERO TEXT BAND — white, crisp ════════ -->
+  <div id="hero-band">
+    <div class="hero-band-inner">
+      <div>
+        <h1 class="hero-hl">Resilient Agriculture Through Cover Crops</h1>
+        <p class="hero-sub">We provide quality seeds, crop specific programs and agronomic support to integrate cover cropping into your production system.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn btn-solid">Request a Consultation</a>
+          <a href="#about"   class="btn btn-outline-dark">Learn More</a>
+        </div>
+      </div>
+      <div>
+        <p class="hero-tagline">
+          We strive to cultivate resiliency on the farm, for the farm, with a commitment to those who grow our food.
+          <em>Grass Valley, California</em>
+        </p>
+      </div>
     </div>
   </div>
 
@@ -757,14 +789,11 @@
       <div class="two-col">
         <div class="col-img fade-up">
           <!--
-            ╔══════════════════════════════════════════════╗
-            ║  IMAGE SWAP — portrait 4:5 ratio             ║
-            ║  Recommended: 900×1125px JPG                 ║
-            ╚══════════════════════════════════════════════╝
+            IMAGE: portrait 4:5 ratio. Recommended: 900x1125px JPG.
           -->
           <img
             src="https://images.squarespace-cdn.com/content/v1/662fe751488d864821321c5d/1714422657423-VMMM86Z1LAPRK73F9R8K/image-asset.jpeg"
-            alt="Cover crop field"
+            alt="Cover crop field in growth"
             loading="lazy"
           />
         </div>
@@ -774,7 +803,7 @@
           <p class="body-text">Our leadership team brings over 10 years of global agronomy experience to take on the greatest challenge of our time, growing in a way that sustains our land, our farmers, and our food system.</p>
           <p class="body-text">Based in Grass Valley, CA, we work directly with farmers to design cover crop programs that improve soil health, reduce inputs, and build long-term resilience into every operation we touch.</p>
           <div class="ruled-gap"></div>
-          <a href="#contact" class="btn btn-outline-dark" style="margin-top:6px">Get in Touch</a>
+          <a href="#contact" class="btn btn-outline-dark">Get in Touch</a>
         </div>
       </div>
     </div>
@@ -811,24 +840,21 @@
   <section id="management" aria-label="Cover crop management">
     <div class="wrap">
       <div class="two-col reverse">
-        <div class="col-text mgmt-text fade-up">
+        <div class="col-text fade-up">
           <p class="eyebrow">Cover Crop Management</p>
           <h2 class="section-title">Every farm is different. Your program should be too.</h2>
           <p class="body-text">Cover cropping is a crop specific, farm specific process shaped by your soil, climate, cash crop, and goals. Whether you're just getting started or looking to refine an existing program, we bring the science and field experience.</p>
-          <p class="body-text" style="margin-top:14px">Please reach out for a consultation to learn more about how cover crops can be part of your production system.</p>
+          <p class="body-text" style="margin-top:16px">Please reach out for a consultation to learn more about how cover crops can be part of your production system.</p>
           <div class="ruled-gap"></div>
           <a href="#contact" class="btn btn-solid">Schedule a Consultation</a>
         </div>
-        <div class="col-text mgmt-img fade-up" style="transition-delay:.15s">
+        <div class="mgmt-img fade-up" style="transition-delay:.15s">
           <!--
-            ╔══════════════════════════════════════════════╗
-            ║  IMAGE SWAP — landscape 16:10 ratio          ║
-            ║  Recommended: 1200×750px JPG                 ║
-            ╚══════════════════════════════════════════════╝
+            IMAGE: landscape 4:3 ratio. Recommended: 1200x900px JPG.
           -->
           <img
             src="https://images.squarespace-cdn.com/content/v1/662fe751488d864821321c5d/ec55f024-2ebd-44e9-8b2a-45f85a32cff2/Screenshot+2024-12-19+at+1.33.45%E2%80%AFPM.png"
-            alt="Cover crop management and field planning"
+            alt="Cover crop management in the field"
             loading="lazy"
           />
         </div>
@@ -841,7 +867,6 @@
     <div class="wrap">
       <div class="contact-grid">
 
-        <!-- left: info -->
         <div class="fade-up">
           <p class="eyebrow">Get In Touch</p>
           <h2 class="contact-title">Ready to talk cover crops?</h2>
@@ -862,22 +887,22 @@
           </ul>
         </div>
 
-        <!-- right: form -->
         <div class="fade-up" style="transition-delay:.15s">
-          <!--
-            ╔══════════════════════════════════════════════════════╗
-            ║  FORM SETUP (free, takes 5 min):                     ║
-            ║  1. Go to https://formspree.io → create free account ║
-            ║  2. New Form → copy your Form ID                     ║
-            ║  3. Replace YOUR_FORM_ID in the action URL below     ║
-            ╚══════════════════════════════════════════════════════╝
-          -->
+          <!-- Success message (hidden until form submits) -->
+          <div class="form-success" id="form-success" role="alert" aria-live="polite">
+            <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="26" cy="26" r="25" stroke="#3d6b45" stroke-width="2"/>
+              <path d="M15 26l8 8 14-14" stroke="#3d6b45" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3>Message sent!</h3>
+            <p>Thanks for reaching out. We'll be in touch soon.</p>
+          </div>
+
           <form
             class="contact-form"
-            name="contact"
-            method="POST"
-            action="https://formspree.io/f/mnjrepgl"
+            id="contact-form"
             aria-label="Contact form"
+            novalidate
           >
             <div class="form-row">
               <div class="field">
@@ -894,7 +919,7 @@
               <input type="text" id="farm" name="farm" placeholder="Family Farm, LLC" />
             </div>
             <div class="field">
-              <label for="interest">I'm interested in…</label>
+              <label for="interest">I'm interested in</label>
               <select id="interest" name="interest">
                 <option value="">Select one</option>
                 <option>Seed supply</option>
@@ -905,9 +930,9 @@
             </div>
             <div class="field">
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell us about your farm and what you're looking to achieve…"></textarea>
+              <textarea id="message" name="message" placeholder="Tell us about your farm and what you're looking to achieve"></textarea>
             </div>
-            <button type="submit" class="btn btn-solid" style="align-self:flex-start">Send Message</button>
+            <button type="submit" class="btn btn-solid" id="submit-btn" style="align-self:flex-start">Send Message</button>
           </form>
         </div>
 
@@ -917,28 +942,82 @@
 
   <!-- ════════ FOOTER ════════ -->
   <footer>
-    <p>
-      © <span id="yr"></span> Cover Crop Seed Co.&ensp;·&ensp;Grass Valley, CA
-    </p>
+    <p>© <span id="yr"></span> Cover Crop Seed Co. &nbsp;·&nbsp; Grass Valley, CA</p>
   </footer>
 
-  <!-- ── Scripts ─────────────────────────────────────────────────── -->
   <script>
+    // ── Year ──────────────────────────────────────────────────────
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // nav shadow on scroll
+    // ── Nav shadow ────────────────────────────────────────────────
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
 
-    // fade-up on scroll
+    // ── Mobile hamburger ──────────────────────────────────────────
+    const toggle = document.querySelector('.nav-toggle');
+    const drawer = document.getElementById('nav-drawer');
+    toggle.addEventListener('click', () => {
+      const open = toggle.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      drawer.classList.toggle('open', open);
+      drawer.setAttribute('aria-hidden', !open);
+    });
+    // close drawer when a link is tapped
+    drawer.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.classList.remove('open');
+        drawer.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+        drawer.setAttribute('aria-hidden', true);
+      });
+    });
+
+    // ── Fade-up on scroll ─────────────────────────────────────────
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
     document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+    // ── Contact form — AJAX submit (stays on page) ────────────────
+    const form    = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+
+      const data = new FormData(form);
+
+      try {
+        const res = await fetch('https://formspree.io/f/mnjrepgl', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          // hide form, show success message
+          form.style.display = 'none';
+          success.classList.add('visible');
+          // scroll success into view
+          success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          submitBtn.textContent = 'Try again';
+          submitBtn.disabled = false;
+          alert('Something went wrong. Please email us directly at covercropseedcompany@gmail.com');
+        }
+      } catch {
+        submitBtn.textContent = 'Try again';
+        submitBtn.disabled = false;
+        alert('Could not send. Please email us at covercropseedcompany@gmail.com');
+      }
+    });
   </script>
 
 </body>
